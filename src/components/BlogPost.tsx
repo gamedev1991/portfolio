@@ -1,7 +1,7 @@
 
 import { useEffect, useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
-import { ArrowLeft, Calendar, Tag } from 'lucide-react';
+import { ArrowLeft, Calendar, Tag, ArrowRight } from 'lucide-react';
 import { blogPosts } from '@/data/blogPosts';
 import Card from './common/Card';
 import Button from './common/Button';
