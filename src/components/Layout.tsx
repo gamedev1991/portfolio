@@ -44,6 +44,12 @@ const Layout = ({ children }: LayoutProps) => {
               >
                 Google Play
               </a>
+              <a 
+                href="/blog" 
+                className="text-white/60 hover:text-cyan-400 transition-colors text-sm"
+              >
+                Blog
+              </a>
             </div>
           </div>
         </div>
