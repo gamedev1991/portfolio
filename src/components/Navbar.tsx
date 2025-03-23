@@ -2,25 +2,29 @@
 import { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
 import Button from './common/Button';
+import { Link, useLocation } from 'react-router-dom';
 
 interface NavItem {
   label: string;
   href: string;
+  isExternal?: boolean;
 }
 
 const navItems: NavItem[] = [
-  { label: 'Home', href: '#home' },
-  { label: 'About', href: '#about' },
-  { label: 'Experience', href: '#experience' },
-  { label: 'Projects', href: '#projects' },
-  { label: 'Skills', href: '#skills' },
+  { label: 'Home', href: '/' },
+  { label: 'About', href: '/#about' },
+  { label: 'Experience', href: '/#experience' },
+  { label: 'Projects', href: '/#projects' },
+  { label: 'Skills', href: '/#skills' },
   { label: 'Case Studies', href: '/blog' },
-  { label: 'Contact', href: '#contact' },
+  { label: 'Contact', href: '/#contact' },
 ];
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const location = useLocation();
+  const isHomePage = location.pathname === '/';
 
   useEffect(() => {
     const handleScroll = () => {
@@ -35,6 +39,24 @@ const Navbar = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
   };
 
+  const renderNavLink = (item: NavItem) => {
+    // For hash links on non-home pages, prepend with root path
+    const href = item.href.startsWith('#') && !isHomePage 
+      ? `/${item.href}` 
+      : item.href;
+    
+    return (
+      <Link
+        key={item.label}
+        to={href}
+        className="px-3 py-2 text-sm font-medium text-white/80 hover:text-cyan-400 transition-colors relative group"
+      >
+        {item.label}
+        <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-cyan-400 transition-all duration-300 group-hover:w-full"></span>
+      </Link>
+    );
+  };
+
   return (
     <header 
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
@@ -45,24 +67,15 @@ const Navbar = () => {
     >
       <div className="container mx-auto px-4">
         <div className="flex justify-between items-center">
-          <a href="#home" className="flex items-center">
+          <Link to="/" className="flex items-center">
             <span className="text-xl font-bold text-white font-orbitron">
               <span className="text-cyan-400">R</span>ahul <span className="text-cyan-400">O</span>hri
             </span>
-          </a>
+          </Link>
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-1">
-            {navItems.map((item) => (
-              <a
-                key={item.label}
-                href={item.href}
-                className="px-3 py-2 text-sm font-medium text-white/80 hover:text-cyan-400 transition-colors relative group"
-              >
-                {item.label}
-                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-cyan-400 transition-all duration-300 group-hover:w-full"></span>
-              </a>
-            ))}
+            {navItems.map(renderNavLink)}
           </nav>
 
           {/* Mobile Menu Toggle */}
@@ -83,14 +96,14 @@ const Navbar = () => {
       >
         <div className="container mx-auto px-4 flex flex-col space-y-3">
           {navItems.map((item) => (
-            <a
+            <Link
               key={item.label}
-              href={item.href}
+              to={item.href.startsWith('#') && !isHomePage ? `/${item.href}` : item.href}
               className="px-3 py-2 text-sm font-medium text-white/80 hover:text-cyan-400 transition-colors border-l-2 border-transparent hover:border-cyan-400"
               onClick={() => setIsMobileMenuOpen(false)}
             >
               {item.label}
-            </a>
+            </Link>
           ))}
         </div>
       </div>
