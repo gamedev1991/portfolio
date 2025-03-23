@@ -66,7 +66,7 @@ const Blog = () => {
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
             <AnimatedText variant="glow">
-              Thoughts & <span className="text-cyan-400">Insights</span>
+              Case <span className="text-cyan-400">Studies</span>
             </AnimatedText>
           </h2>
           <p className="text-white/70 max-w-2xl mx-auto">
