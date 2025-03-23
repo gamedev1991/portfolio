@@ -35,6 +35,24 @@ const Navbar = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  // Scroll to section handler
+  useEffect(() => {
+    // Check if there's a hash in the URL
+    if (location.hash) {
+      const id = location.hash.substring(1); // remove the # character
+      const element = document.getElementById(id);
+      
+      if (element) {
+        setTimeout(() => {
+          element.scrollIntoView({ behavior: 'smooth' });
+        }, 100);
+      }
+    } else if (location.pathname === '/') {
+      // If we're on the home page with no hash, scroll to top
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  }, [location]);
+
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
   };
