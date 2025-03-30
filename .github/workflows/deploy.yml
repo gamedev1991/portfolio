@@ -31,6 +31,9 @@ jobs:
         env:
           CI: false
         
+      - name: Setup routing
+        run: cp dist/index.html dist/404.html
+        
       - name: Copy CNAME to dist
         run: cp public/CNAME dist/
         
