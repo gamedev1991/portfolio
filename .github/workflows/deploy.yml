@@ -23,8 +23,13 @@ jobs:
       - name: Install dependencies
         run: npm ci
         
+      - name: Type check
+        run: npx tsc --noEmit
+        
       - name: Build
         run: npm run build
+        env:
+          CI: false
         
       - name: Copy CNAME to dist
         run: cp public/CNAME dist/
