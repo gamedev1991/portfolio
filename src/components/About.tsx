@@ -98,7 +98,7 @@ const About = () => {
               {/* Avatar with actual image */}
               <div className="absolute inset-4 bg-cyber-darker rounded-lg overflow-hidden border border-white/10">
                 <img 
-                  src="/rahul-profile.jpg"  
+                  src="/Images/rahul-profile.jpg"  
                   alt="Rahul Ohri"
                   className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-300"
                   onError={(e) => {
