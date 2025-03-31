@@ -19,7 +19,7 @@ const projects: Project[] = [
     title: "Cosmo Sprint",
     company: "Blkbox AI",
     description: "A hybrid casual mobile game featuring procedurally generated levels and adaptive difficulty based on player behavior.",
-    image: "https://via.placeholder.com/600x400/0A1128/00FFFF?text=Gate+Runner",
+    image: "/Images/CosmoSprint-Thumbnail.png",
     technologies: ["Unity", "AI", "Procedural Generation", "Mobile"],
     videoUrl: "/Videos/CosmoSprint.mp4"
   },
@@ -27,7 +27,7 @@ const projects: Project[] = [
     title: "FanClash",
     company: "FanClash",
     description: "A fantasy esports platform allowing users to create teams of professional esports players and compete based on performance.",
-    image: "https://via.placeholder.com/600x400/0A1128/FF00FF?text=Fantasy+EStars",
+    image: "/Images/FanClash-Thumbnail.png",
     technologies: ["React", "Node.js", "Real-time Data", "Esports API"],
     videoUrl: "/Videos/FanClash.mp4"
   },
@@ -35,7 +35,7 @@ const projects: Project[] = [
     title: "Tacto Electronics Game",
     company: "Playshifu",
     description: "An educational AR game teaching basic electronics concepts through interactive puzzles and simulations.",
-    image: "https://via.placeholder.com/600x400/0A1128/39FF14?text=Tacto+Electronics",
+    image: "/Images/TactoElectronics-Thumbnail.webp",
     technologies: ["AR", "Unity", "Educational Design", "Interactive Learning"],
     videoUrl: "/Videos/TactoElectronics.mp4"  
   },
@@ -43,7 +43,7 @@ const projects: Project[] = [
     title: "Food Truck Chef",
     company: "Nukebox Studios",
     description: "A time-management cooking game where players manage food trucks , serving customers and upgrading equipment.",
-    image: "https://via.placeholder.com/600x400/0A1128/FFFF00?text=Food+Truck+Chef",
+    image: "/Images/FoodTruckChef-Thumbnail.png",
     technologies: ["Unity", "F2P", "Mobile Game Design", "Monetization"],
     videoUrl: "/Videos/FoodTruckChef.mp4"  
   },
@@ -59,7 +59,7 @@ const projects: Project[] = [
     title: "Adaptive Math Games",
     company: "SplashLearn",
     description: "A suite of educational games that adapt to student performance, focusing on making math learning engaging and effective.",
-    image: "https://via.placeholder.com/600x400/0A1128/FF00FF?text=Adaptive+Math",
+    image: "/Images/SplashLearn-Thumbnail.png",
     technologies: ["Educational Design", "Unity", "Adaptive Learning", "Analytics"],
     videoUrl: "/Videos/SplashLearn.mp4"
   },
@@ -67,7 +67,7 @@ const projects: Project[] = [
     title: "Bring Me Home",
     company: "Nukebox Studios",
     description: "A crossy road type of game where the player has to navigate through obstacles to bring the character home.",
-    image: "https://via.placeholder.com/600x400/0A1128/FF00FF?text=Bring+Me+Home",
+    image: "/Images/BringMeHome-Thumbnail.png",
     technologies: ["Unity", "F2P", "Mobile Game Design", "Monetization"],
     videoUrl: "/Videos/BringMeHome.mp4"
   },
@@ -75,7 +75,7 @@ const projects: Project[] = [
     title: "One Man Army",
     company: "Nukebox Studios",
     description: "A 2D defense game where the player has to defend themselves from waves of enemies.",
-    image: "https://via.placeholder.com/600x400/0A1128/FF00FF?text=Bring+Me+Home",
+    image: "/Images/OneManArmy-Thumbnail.png",
     technologies: ["Unity", "F2P", "Mobile Game Design", "Monetization"],
     videoUrl: "/Videos/OneManArmy.mp4"
   },
@@ -83,7 +83,7 @@ const projects: Project[] = [
     title: "Plugo Animals",
     company: "Playshifu",
     description: "An educational toy based game where kids learn about animals and their habitats.",
-    image: "https://via.placeholder.com/600x400/0A1128/39FF14?text=Tacto+Electronics",
+    image: "/Images/PlugoAnimals-Thumbnail.png",
     technologies: ["Unity", "F2P", "Educational Design", "Interactive Learning"],
     videoUrl: "/Videos/PlugoAnimals.mp4"
   }
