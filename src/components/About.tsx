@@ -1,4 +1,3 @@
-
 import Card from './common/Card';
 import AnimatedText from './common/AnimatedText';
 import { Globe, Gamepad, Database, Workflow, Lightbulb, Users } from 'lucide-react';
@@ -96,17 +95,30 @@ const About = () => {
               {/* Stylized Avatar Frame */}
               <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/20 via-purple-500/20 to-pink-500/20 rounded-lg animate-pulse-glow"></div>
               
-              {/* Avatar - This would be replaced with an actual image */}
+              {/* Avatar with actual image */}
               <div className="absolute inset-4 bg-cyber-darker rounded-lg overflow-hidden border border-white/10">
-                <div className="absolute inset-0 flex items-center justify-center text-white/30 font-medium">
-                  <span className="text-cyan-400 font-orbitron text-xl">R.O</span>
-                </div>
+                <img 
+                  src="/rahul-profile.jpg"  
+                  alt="Rahul Ohri"
+                  className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-300"
+                  onError={(e) => {
+                    const target = e.target as HTMLImageElement;
+                    console.error('Image failed to load:', {
+                      src: target.src,
+                      naturalWidth: target.naturalWidth,
+                      naturalHeight: target.naturalHeight,
+                      error: e
+                    });
+                    target.src = '/placeholder.svg';
+                    target.onerror = null; // Prevent infinite loop if placeholder also fails
+                  }}
+                />
                 
                 {/* Grid overlay */}
-                <div className="absolute inset-0 bg-cyber-grid bg-cyber-grid-size opacity-30"></div>
+                <div className="absolute inset-0 bg-cyber-grid bg-cyber-grid-size opacity-30 mix-blend-overlay"></div>
                 
                 {/* Scan line effect */}
-                <div className="absolute inset-0 overflow-hidden">
+                <div className="absolute inset-0 overflow-hidden pointer-events-none">
                   <div className="h-full w-full animate-scanline"></div>
                 </div>
               </div>

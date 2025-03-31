@@ -22,3 +22,10 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Upload scripts with credentials
+upload.txt
+upload.ps1
+ftp-test.ps1
+test-ftp.ps1
+deploy.ps1
