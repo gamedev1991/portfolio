@@ -1,9 +1,8 @@
-
 import { useState } from 'react';
 import Card from './common/Card';
 import Button from './common/Button';
 import AnimatedText from './common/AnimatedText';
-import { ExternalLink, Github, Play } from 'lucide-react';
+import { ExternalLink, Github, Play, Video, X } from 'lucide-react';
 
 interface Project {
   title: string;
@@ -14,16 +13,18 @@ interface Project {
   link?: string;
   playStoreLink?: string;
   githubLink?: string;
+  videoUrl?: string;
 }
 
 const projects: Project[] = [
   {
     title: "Gate Runner",
     company: "Blkbox AI",
-    description: "An AI-powered mobile game featuring procedurally generated levels and adaptive difficulty based on player behavior.",
+    description: "A hybrid casual mobile game featuring procedurally generated levels and adaptive difficulty based on player behavior.",
     image: "https://via.placeholder.com/600x400/0A1128/00FFFF?text=Gate+Runner",
     technologies: ["Unity", "AI", "Procedural Generation", "Mobile"],
-    playStoreLink: "#"
+    playStoreLink: "#",
+    videoUrl: "Videos/CosmoSprint.mp4"
   },
   {
     title: "Fantasy With EStars",
@@ -31,7 +32,8 @@ const projects: Project[] = [
     description: "A fantasy esports platform allowing users to create teams of professional esports players and compete based on real-world performance.",
     image: "https://via.placeholder.com/600x400/0A1128/FF00FF?text=Fantasy+EStars",
     technologies: ["React", "Node.js", "Real-time Data", "Esports API"],
-    link: "#"
+    link: "#",
+    videoUrl: "/Videos/FanClash.mp4"
   },
   {
     title: "Tacto Electronics Game",
@@ -39,7 +41,7 @@ const projects: Project[] = [
     description: "An educational AR game teaching basic electronics concepts through interactive puzzles and simulations.",
     image: "https://via.placeholder.com/600x400/0A1128/39FF14?text=Tacto+Electronics",
     technologies: ["AR", "Unity", "Educational Design", "Interactive Learning"],
-    playStoreLink: "#"
+    videoUrl: "/Videos/TactoElectronics.mp4"  
   },
   {
     title: "Food Truck Chef",
@@ -47,7 +49,7 @@ const projects: Project[] = [
     description: "A time-management cooking game where players manage food trucks across different locations, serving customers and upgrading equipment.",
     image: "https://via.placeholder.com/600x400/0A1128/FFFF00?text=Food+Truck+Chef",
     technologies: ["Unity", "F2P", "Mobile Game Design", "Monetization"],
-    playStoreLink: "#"
+    videoUrl: "/Videos/ Food Truck Chef™： Addictive Cooking Game.mp4"  
   },
   {
     title: "Web3 Gaming Marketplace",
@@ -55,7 +57,7 @@ const projects: Project[] = [
     description: "A decentralized marketplace for game assets, allowing players to buy, sell, and trade in-game items across multiple games.",
     image: "https://via.placeholder.com/600x400/0A1128/00FFFF?text=Web3+Marketplace",
     technologies: ["Blockchain", "NFT", "React", "Smart Contracts"],
-    link: "#"
+    videoUrl: "/Videos/Aura.mp4" 
   },
   {
     title: "Adaptive Math Games",
@@ -63,15 +65,58 @@ const projects: Project[] = [
     description: "A suite of educational games that adapt to student performance, focusing on making math learning engaging and effective.",
     image: "https://via.placeholder.com/600x400/0A1128/FF00FF?text=Adaptive+Math",
     technologies: ["Educational Design", "Unity", "Adaptive Learning", "Analytics"],
-    link: "#"
+    videoUrl: "/Videos/SplashLearn.mp4"
   }
 ];
 
+const VideoModal = ({ videoUrl, isOpen, onClose }: { videoUrl: string; isOpen: boolean; onClose: () => void }) => {
+  if (!isOpen) return null;
+
+  return (
+    <div className="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 flex items-center justify-center p-4">
+      <div className="relative w-full max-w-4xl bg-cyber-darker rounded-lg overflow-hidden">
+        <button
+          onClick={onClose}
+          className="absolute top-4 right-4 text-white/70 hover:text-white z-10 bg-black/50 rounded-full p-1"
+        >
+          <X size={24} />
+        </button>
+        <div className="relative pt-[56.25%]">
+          <video
+            src={videoUrl}
+            className="absolute inset-0 w-full h-full"
+            controls
+            allowFullScreen
+          />
+        </div>
+      </div>
+    </div>
+  );
+};
+
 const Projects = () => {
   const [activeProject, setActiveProject] = useState<number | null>(null);
+  const [videoModal, setVideoModal] = useState<{ isOpen: boolean; url: string }>({
+    isOpen: false,
+    url: '',
+  });
+
+  const openVideo = (url: string) => {
+    setVideoModal({ isOpen: true, url });
+  };
+
+  const closeVideo = () => {
+    setVideoModal({ isOpen: false, url: '' });
+  };
 
   return (
     <section id="projects" className="py-20 relative">
+      <VideoModal
+        videoUrl={videoModal.url}
+        isOpen={videoModal.isOpen}
+        onClose={closeVideo}
+      />
+      
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <h2 className="inline-block text-3xl md:text-4xl font-bold relative">
@@ -95,13 +140,24 @@ const Projects = () => {
                 variant="hover"
                 className="h-full overflow-hidden group"
               >
-                {/* Project Image */}
+                {/* Project Image with Video Overlay */}
                 <div className="relative overflow-hidden h-48">
                   <div 
                     className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110"
                     style={{ backgroundImage: `url(${project.image})` }}
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-cyber-black via-transparent to-transparent"></div>
+                  
+                  {project.videoUrl && (
+                    <button
+                      onClick={() => openVideo(project.videoUrl!)}
+                      className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                    >
+                      <div className="bg-black/70 p-4 rounded-full transform transition-transform duration-300 hover:scale-110">
+                        <Video size={24} className="text-white" />
+                      </div>
+                    </button>
+                  )}
                   
                   <div className="absolute top-3 left-3 bg-cyber-black/80 backdrop-blur-sm px-2 py-1 rounded text-xs font-medium text-white border border-white/10">
                     {project.company}
@@ -132,6 +188,18 @@ const Projects = () => {
                   
                   {/* Links */}
                   <div className="flex items-center space-x-3 mt-auto">
+                    {project.videoUrl && (
+                      <Button
+                        variant="outlined"
+                        size="sm"
+                        onClick={() => openVideo(project.videoUrl!)}
+                        className="flex items-center"
+                        icon={<Video size={14} />}
+                      >
+                        Watch Demo
+                      </Button>
+                    )}
+                    
                     {project.link && (
                       <Button
                         variant="outlined"
