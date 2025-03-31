@@ -51,7 +51,7 @@ const projects: Project[] = [
     title: "Web3 Gaming Marketplace",
     company: "AURA",
     description: "A decentralized marketplace for game NFTs, allowing players to buy, sell, and trade in-game items across multiple games.",
-    image: "/Images/Aura-Thumbnail.jpg",
+    image: "/Images/Aura-Thumbnail.png",
     technologies: ["Blockchain", "NFT", "React", "Smart Contracts"],
     videoUrl: "/Videos/Aura.mp4" 
   },
