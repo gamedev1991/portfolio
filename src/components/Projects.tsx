@@ -43,7 +43,7 @@ const projects: Project[] = [
     title: "Food Truck Chef",
     company: "Nukebox Studios",
     description: "A time-management cooking game where players manage food trucks , serving customers and upgrading equipment.",
-    image: "/Images/FoodTruckChef-Thumbnail.png",
+    image: "/Images/FoodTruckChef-Thumbnail.jpg",
     technologies: ["Unity", "F2P", "Mobile Game Design", "Monetization"],
     videoUrl: "/Videos/FoodTruckChef.mp4"  
   },
