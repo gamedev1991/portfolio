@@ -26,7 +26,7 @@ const projects: Project[] = [
   {
     title: "FanClash",
     company: "FanClash",
-    description: "A fantasy esports platform allowing users to create teams of professional esports players and compete based on real-world performance.",
+    description: "A fantasy esports platform allowing users to create teams of professional esports players and compete based on performance.",
     image: "https://via.placeholder.com/600x400/0A1128/FF00FF?text=Fantasy+EStars",
     technologies: ["React", "Node.js", "Real-time Data", "Esports API"],
     videoUrl: "/Videos/FanClash.mp4"
@@ -42,7 +42,7 @@ const projects: Project[] = [
   {
     title: "Food Truck Chef",
     company: "Nukebox Studios",
-    description: "A time-management cooking game where players manage food trucks across different locations, serving customers and upgrading equipment.",
+    description: "A time-management cooking game where players manage food trucks , serving customers and upgrading equipment.",
     image: "https://via.placeholder.com/600x400/0A1128/FFFF00?text=Food+Truck+Chef",
     technologies: ["Unity", "F2P", "Mobile Game Design", "Monetization"],
     videoUrl: "/Videos/FoodTruckChef.mp4"  
