@@ -137,17 +137,17 @@ const Contact = () => {
               
               <div className="space-y-4">
                 <a 
-                  href="mailto:example@email.com" 
+                  href="mailto:rahulohri2007@email.com" 
                   className="flex items-center space-x-3 text-white/80 hover:text-cyan-400 transition-colors group"
                 >
                   <div className="w-10 h-10 rounded-full flex items-center justify-center border border-white/20 group-hover:border-cyan-500/50 transition-colors">
                     <Mail size={18} />
                   </div>
-                  <span>example@email.com</span>
+                  <span>Email</span>
                 </a>
                 
                 <a 
-                  href="https://linkedin.com/in/" 
+                  href="https://www.linkedin.com/in/rahul-ohri/" 
                   target="_blank" 
                   rel="noreferrer"
                   className="flex items-center space-x-3 text-white/80 hover:text-cyan-400 transition-colors group"
@@ -159,7 +159,7 @@ const Contact = () => {
                 </a>
                 
                 <a 
-                  href="https://play.google.com/" 
+                  href="https://steamcommunity.com/profiles/76561198123903147/" 
                   target="_blank" 
                   rel="noreferrer"
                   className="flex items-center space-x-3 text-white/80 hover:text-cyan-400 transition-colors group"
@@ -167,7 +167,7 @@ const Contact = () => {
                   <div className="w-10 h-10 rounded-full flex items-center justify-center border border-white/20 group-hover:border-cyan-500/50 transition-colors">
                     <ExternalLink size={18} />
                   </div>
-                  <span>Google Play Portfolio</span>
+                  <span>Steam Game Profile</span>
                 </a>
               </div>
             </div>

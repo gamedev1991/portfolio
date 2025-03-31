@@ -23,13 +23,13 @@ const Layout = ({ children }: LayoutProps) => {
             </div>
             <div className="flex space-x-6">
               <a 
-                href="mailto:example@email.com" 
+                href="mailto:rahulohri2007@email.com" 
                 className="text-white/60 hover:text-cyan-400 transition-colors text-sm"
               >
-                example@email.com
+                Email
               </a>
               <a 
-                href="https://linkedin.com/in/" 
+                href="https://www.linkedin.com/in/rahul-ohri/" 
                 target="_blank" 
                 rel="noreferrer"
                 className="text-white/60 hover:text-cyan-400 transition-colors text-sm"
@@ -37,12 +37,12 @@ const Layout = ({ children }: LayoutProps) => {
                 LinkedIn
               </a>
               <a 
-                href="https://play.google.com/" 
+                href="https://steamcommunity.com/profiles/76561198123903147/" 
                 target="_blank" 
                 rel="noreferrer"
                 className="text-white/60 hover:text-cyan-400 transition-colors text-sm"
               >
-                Google Play
+                Steam Profile
               </a>
               <a 
                 href="/blog" 
