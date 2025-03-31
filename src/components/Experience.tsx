@@ -17,33 +17,33 @@ const experiences: ExperienceItem[] = [
     company: "Blkbox AI",
     role: "Product Manager",
     period: "2023 - Present",
-    description: "Leading product development for AI-driven gaming platforms, focusing on innovative gameplay mechanics and personalized user experiences.",
+    description: "Leading product development for a hybrid casual game, focusing on innovative gameplay mechanics and user experiences.",
     achievements: [
-      "Launched Gate Runner Mobile Game with 30% better retention than industry average",
-      "Implemented data-driven development process, reducing iteration time by 40%",
-      "Established AI-powered personalization features, increasing user engagement by 25%"
+      "Launched Gate Runner Mobile Game  within 5 months, achieving 10,000 downloads post-launch.",
+      "Improved player D1 retention from 10% to 18% within two months by refining game controls and enhancing level design for smoother gameplay.",
+      "Analyzed and optimized core loop and level design, increasing level completion rates by 7%."
     ]
   },
   {
     company: "AURA",
     role: "Product Manager",
     period: "2022 - 2023",
-    description: "Managed the development of Web3 gaming platform with focus on blockchain integration and NFT marketplaces.",
+    description: "Managed the development of Web3 gaming marketplace with focus on blockchain integration and NFTs.",
     achievements: [
-      "Developed and launched decentralized gaming marketplace with 10K+ daily active users",
-      "Optimized user onboarding flow, increasing conversion by 35%",
+      "Optimized the website's featured games section, leading to a 5% increase in click-through rates (CTR) and improved user engagement",
+      "Successfully implemented a dedicated 'Drops' page on the website, resulting in a notable 7% increase in user engagement time",
       "Established partnerships with 3 major blockchain networks, expanding platform reach"
     ]
   },
   {
     company: "FanClash",
-    role: "Senior Product Manager",
+    role: "Product Manager",
     period: "2021 - 2022",
     description: "Led product strategy for fantasy esports platform focusing on user acquisition, retention, and monetization.",
     achievements: [
-      "Created 'Fantasy With EStars' feature that drove 28% increase in daily active users",
-      "Improved platform monetization strategy, resulting in 45% revenue growth",
-      "Optimized match-making algorithm, increasing user satisfaction score by 18%"
+      "Created 'Fantasy With EStars' feature that drove 20% increase in fill rate",
+      "Revamped team creation flow to increase conversion rate by 5%",
+      "Performed extensive user research to improve engagement of boosters, resulting in a 10% increase in usage"
     ]
   },
   {
@@ -52,9 +52,9 @@ const experiences: ExperienceItem[] = [
     period: "2020 - 2021",
     description: "Developed educational AR games for children, focusing on learning through interactive play.",
     achievements: [
-      "Developed Tacto Electronics Game, reaching 100K+ downloads in first month",
+      "Developed Tacto Electronics Game, reaching 1K+ downloads in first month",
       "Created adaptive difficulty system, improving session length by 40%",
-      "Implemented analytics system that provided insights for 5 major feature updates"
+      "Led efforts on analyzing on Tacto Electronics Game to diagnose drop-offs and increase level completion rate by 5%"
     ]
   },
   {
@@ -63,9 +63,9 @@ const experiences: ExperienceItem[] = [
     period: "2019 - 2020",
     description: "Designed and developed educational games targeting K-5 curriculum with focus on engagement and learning outcomes.",
     achievements: [
-      "Built math games that improved student test scores by an average of 23%",
+      "Built math games that increased engagement by 23%",
       "Developed game framework that reduced development time by 35%",
-      "Created adaptive learning system used by 2M+ students worldwide"
+      "Designed, developed, and launched English games on Android/iOS/Web"
     ]
   },
   {
@@ -74,7 +74,7 @@ const experiences: ExperienceItem[] = [
     period: "2017 - 2019",
     description: "Developed mobile F2P games with focus on casual gaming market and monetization strategies.",
     achievements: [
-      "Co-developed Food Truck Chef, which reached top 100 grossing apps",
+      "Co-developed Food Truck Chef, which was Google Play Game of the Year 2017",
       "Implemented A/B testing framework that improved monetization by 28%",
       "Optimized game performance, reducing load times by 40% and improving retention"
     ]
