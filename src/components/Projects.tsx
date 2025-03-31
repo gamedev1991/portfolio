@@ -21,7 +21,6 @@ const projects: Project[] = [
     description: "A hybrid casual mobile game featuring procedurally generated levels and adaptive difficulty based on player behavior.",
     image: "https://via.placeholder.com/600x400/0A1128/00FFFF?text=Gate+Runner",
     technologies: ["Unity", "AI", "Procedural Generation", "Mobile"],
-    playStoreLink: "#",
     videoUrl: "/Videos/CosmoSprint.mp4"
   },
   {
@@ -178,6 +177,18 @@ const Projects = () => {
                       </span>
                     ))}
                   </div>
+
+                  {project.videoUrl && (
+                      <Button
+                        variant="outlined"
+                        size="sm"
+                        onClick={() => openVideo(project.videoUrl!)}
+                        className="flex items-center"
+                        icon={<Video size={14} />}
+                      >
+                        Watch Demo
+                      </Button>
+                    )}
                   
                   {/* Play Store Link */}
                   {project.playStoreLink && (
