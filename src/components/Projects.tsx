@@ -2,7 +2,7 @@ import { useState } from 'react';
 import Card from './common/Card';
 import Button from './common/Button';
 import AnimatedText from './common/AnimatedText';
-import { ExternalLink, Github, Play, Video, X } from 'lucide-react';
+import { Video, X } from 'lucide-react';
 
 interface Project {
   title: string;
@@ -10,9 +10,7 @@ interface Project {
   description: string;
   image: string;
   technologies: string[];
-  link?: string;
   playStoreLink?: string;
-  githubLink?: string;
   videoUrl?: string;
 }
 
@@ -24,7 +22,7 @@ const projects: Project[] = [
     image: "https://via.placeholder.com/600x400/0A1128/00FFFF?text=Gate+Runner",
     technologies: ["Unity", "AI", "Procedural Generation", "Mobile"],
     playStoreLink: "#",
-    videoUrl: "Videos/CosmoSprint.mp4"
+    videoUrl: "/Videos/CosmoSprint.mp4"
   },
   {
     title: "Fantasy With EStars",
@@ -32,7 +30,6 @@ const projects: Project[] = [
     description: "A fantasy esports platform allowing users to create teams of professional esports players and compete based on real-world performance.",
     image: "https://via.placeholder.com/600x400/0A1128/FF00FF?text=Fantasy+EStars",
     technologies: ["React", "Node.js", "Real-time Data", "Esports API"],
-    link: "#",
     videoUrl: "/Videos/FanClash.mp4"
   },
   {
@@ -49,7 +46,7 @@ const projects: Project[] = [
     description: "A time-management cooking game where players manage food trucks across different locations, serving customers and upgrading equipment.",
     image: "https://via.placeholder.com/600x400/0A1128/FFFF00?text=Food+Truck+Chef",
     technologies: ["Unity", "F2P", "Mobile Game Design", "Monetization"],
-    videoUrl: "/Videos/ Food Truck Chef™： Addictive Cooking Game.mp4"  
+    videoUrl: "/Videos/FoodTruckChef.mp4"  
   },
   {
     title: "Web3 Gaming Marketplace",
@@ -86,7 +83,6 @@ const VideoModal = ({ videoUrl, isOpen, onClose }: { videoUrl: string; isOpen: b
             src={videoUrl}
             className="absolute inset-0 w-full h-full"
             controls
-            allowFullScreen
           />
         </div>
       </div>
@@ -95,7 +91,6 @@ const VideoModal = ({ videoUrl, isOpen, onClose }: { videoUrl: string; isOpen: b
 };
 
 const Projects = () => {
-  const [activeProject, setActiveProject] = useState<number | null>(null);
   const [videoModal, setVideoModal] = useState<{ isOpen: boolean; url: string }>({
     isOpen: false,
     url: '',
@@ -133,8 +128,6 @@ const Projects = () => {
             <div 
               key={index}
               className="transform transition-all duration-300 hover:-translate-y-2"
-              onMouseEnter={() => setActiveProject(index)}
-              onMouseLeave={() => setActiveProject(null)}
             >
               <Card 
                 variant="hover"
@@ -186,56 +179,17 @@ const Projects = () => {
                     ))}
                   </div>
                   
-                  {/* Links */}
-                  <div className="flex items-center space-x-3 mt-auto">
-                    {project.videoUrl && (
-                      <Button
-                        variant="outlined"
-                        size="sm"
-                        onClick={() => openVideo(project.videoUrl!)}
-                        className="flex items-center"
-                        icon={<Video size={14} />}
-                      >
-                        Watch Demo
-                      </Button>
-                    )}
-                    
-                    {project.link && (
-                      <Button
-                        variant="outlined"
-                        size="sm"
-                        href={project.link}
-                        className="flex items-center"
-                        icon={<ExternalLink size={14} />}
-                      >
-                        Visit
-                      </Button>
-                    )}
-                    
-                    {project.playStoreLink && (
-                      <Button
-                        variant="outlined"
-                        size="sm"
-                        href={project.playStoreLink}
-                        className="flex items-center"
-                        icon={<Play size={14} />}
-                      >
-                        Play Store
-                      </Button>
-                    )}
-                    
-                    {project.githubLink && (
-                      <Button
-                        variant="ghost"
-                        size="sm"
-                        href={project.githubLink}
-                        className="flex items-center"
-                        icon={<Github size={14} />}
-                      >
-                        Code
-                      </Button>
-                    )}
-                  </div>
+                  {/* Play Store Link */}
+                  {project.playStoreLink && (
+                    <Button
+                      variant="outlined"
+                      size="sm"
+                      href={project.playStoreLink}
+                      className="flex items-center"
+                    >
+                      Play Store
+                    </Button>
+                  )}
                 </div>
               </Card>
             </div>
