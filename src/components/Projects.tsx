@@ -16,7 +16,7 @@ interface Project {
 
 const projects: Project[] = [
   {
-    title: "Gate Runner",
+    title: "Cosmo Sprint",
     company: "Blkbox AI",
     description: "A hybrid casual mobile game featuring procedurally generated levels and adaptive difficulty based on player behavior.",
     image: "https://via.placeholder.com/600x400/0A1128/00FFFF?text=Gate+Runner",
@@ -24,7 +24,7 @@ const projects: Project[] = [
     videoUrl: "/Videos/CosmoSprint.mp4"
   },
   {
-    title: "Fantasy With EStars",
+    title: "FanClash",
     company: "FanClash",
     description: "A fantasy esports platform allowing users to create teams of professional esports players and compete based on real-world performance.",
     image: "https://via.placeholder.com/600x400/0A1128/FF00FF?text=Fantasy+EStars",
@@ -50,7 +50,7 @@ const projects: Project[] = [
   {
     title: "Web3 Gaming Marketplace",
     company: "AURA",
-    description: "A decentralized marketplace for game assets, allowing players to buy, sell, and trade in-game items across multiple games.",
+    description: "A decentralized marketplace for game NFTs, allowing players to buy, sell, and trade in-game items across multiple games.",
     image: "https://via.placeholder.com/600x400/0A1128/00FFFF?text=Web3+Marketplace",
     technologies: ["Blockchain", "NFT", "React", "Smart Contracts"],
     videoUrl: "/Videos/Aura.mp4" 
@@ -62,6 +62,30 @@ const projects: Project[] = [
     image: "https://via.placeholder.com/600x400/0A1128/FF00FF?text=Adaptive+Math",
     technologies: ["Educational Design", "Unity", "Adaptive Learning", "Analytics"],
     videoUrl: "/Videos/SplashLearn.mp4"
+  },
+  {
+    title: "Bring Me Home",
+    company: "Nukebox Studios",
+    description: "A crossy road type of game where the player has to navigate through obstacles to bring the character home.",
+    image: "https://via.placeholder.com/600x400/0A1128/FF00FF?text=Bring+Me+Home",
+    technologies: ["Unity", "F2P", "Mobile Game Design", "Monetization"],
+    videoUrl: "/Videos/BringMeHome.mp4"
+  },
+  {
+    title: "One Man Army",
+    company: "Nukebox Studios",
+    description: "A 2D defense game where the player has to defend themselves from waves of enemies.",
+    image: "https://via.placeholder.com/600x400/0A1128/FF00FF?text=Bring+Me+Home",
+    technologies: ["Unity", "F2P", "Mobile Game Design", "Monetization"],
+    videoUrl: "/Videos/OneManArmy.mp4"
+  },
+  {
+    title: "Plugo Animals",
+    company: "Playshifu",
+    description: "An educational toy based game where kids learn about animals and their habitats.",
+    image: "https://via.placeholder.com/600x400/0A1128/39FF14?text=Tacto+Electronics",
+    technologies: ["Unity", "F2P", "Educational Design", "Interactive Learning"],
+    videoUrl: "/Videos/PlugoAnimals.mp4"
   }
 ];
 

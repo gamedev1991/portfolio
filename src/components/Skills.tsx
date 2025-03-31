@@ -1,4 +1,3 @@
-
 import { useState } from 'react';
 import Terminal from './common/Terminal';
 import Card from './common/Card';
@@ -66,7 +65,6 @@ const skillCategories: SkillCategory[] = [
       "Game Design Principles",
       "Level Design",
       "Unity Engine",
-      "Character Development",
       "Mobile Game Optimization",
       "Gameplay Mechanics",
       "Monetization Strategy"
@@ -77,11 +75,10 @@ const skillCategories: SkillCategory[] = [
     icon: <Code size={20} />,
     skills: [
       "C# Programming",
-      "JavaScript/React",
+      "Unity Engine",
       "SQL Databases",
-      "API Integration",
       "Version Control (Git)",
-      "CI/CD Pipelines",
+      "Vibe Coding using AI/ML",
       "Web3 & Blockchain"
     ]
   },
@@ -121,7 +118,7 @@ const Skills = () => {
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <h2 className="inline-block text-3xl md:text-4xl font-bold relative">
-            <AnimatedText variant="glow">Skills & Certifications</AnimatedText>
+            <AnimatedText variant="glow">Skills</AnimatedText>
             <span className="absolute -bottom-2 left-0 w-full h-1 bg-gradient-to-r from-purple-500 to-cyan-500"></span>
           </h2>
           <p className="mt-4 text-white/70 max-w-2xl mx-auto">
@@ -188,6 +185,7 @@ const Skills = () => {
         </div>
         
         {/* Certifications */}
+        {/* 
         <div className="mt-16">
           <h3 className="text-2xl font-bold mb-8 text-center">
             <AnimatedText variant="glow">Certifications</AnimatedText>
@@ -216,6 +214,7 @@ const Skills = () => {
             ))}
           </div>
         </div>
+        */}
       </div>
     </section>
   );
