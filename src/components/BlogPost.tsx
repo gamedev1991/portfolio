@@ -99,8 +99,43 @@ const BlogPost = () => {
         
         {/* Blog post content */}
         <Card className="p-6 md:p-10 mb-10">
-          <div className="prose prose-invert max-w-none prose-headings:font-orbitron prose-headings:text-cyan-400 prose-p:text-white/80 prose-strong:text-white prose-strong:font-semibold prose-a:text-cyan-400 prose-a:no-underline hover:prose-a:underline prose-blockquote:border-l-cyan-400 prose-blockquote:bg-white/5 prose-blockquote:p-4 prose-blockquote:not-italic prose-blockquote:rounded-r-md prose-li:text-white/80 prose-img:rounded-md prose-img:shadow-lg prose-img:my-8">
-            <ReactMarkdown>
+          <div className="prose prose-invert max-w-none prose-headings:font-orbitron prose-headings:text-cyan-400 
+            prose-p:text-white/80 prose-strong:text-white prose-strong:font-semibold 
+            prose-a:text-cyan-400 prose-a:no-underline hover:prose-a:underline 
+            prose-blockquote:border-l-cyan-400 prose-blockquote:bg-white/5 
+            prose-blockquote:p-4 prose-blockquote:not-italic prose-blockquote:rounded-r-md 
+            prose-li:text-white/80 
+            prose-img:rounded-md prose-img:shadow-lg prose-img:my-8 prose-img:mx-auto prose-img:max-w-[85%]">
+            <ReactMarkdown
+              components={{
+                img: ({ node, ...props }) => (
+                  <div className="flex justify-center my-8">
+                    <img {...props} className="rounded-md shadow-lg max-w-[85%] mx-auto" />
+                  </div>
+                ),
+                p: ({ node, ...props }) => (
+                  <p {...props} className="mb-6 leading-relaxed text-white/80" />
+                ),
+                h1: ({ node, ...props }) => (
+                  <h1 {...props} className="text-3xl md:text-4xl font-orbitron text-cyan-400 mb-6 mt-8" />
+                ),
+                h2: ({ node, ...props }) => (
+                  <h2 {...props} className="text-2xl md:text-3xl font-orbitron text-cyan-400 mb-4 mt-8" />
+                ),
+                h3: ({ node, ...props }) => (
+                  <h3 {...props} className="text-xl md:text-2xl font-orbitron text-cyan-400 mb-4 mt-6" />
+                ),
+                ul: ({ node, ...props }) => (
+                  <ul {...props} className="list-disc pl-6 mb-6 space-y-2" />
+                ),
+                ol: ({ node, ...props }) => (
+                  <ol {...props} className="list-decimal pl-6 mb-6 space-y-2" />
+                ),
+                li: ({ node, ...props }) => (
+                  <li {...props} className="text-white/80 mb-1" />
+                ),
+              }}
+            >
               {post.content}
             </ReactMarkdown>
           </div>
