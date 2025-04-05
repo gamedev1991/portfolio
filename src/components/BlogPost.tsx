@@ -8,6 +8,7 @@ import Button from './common/Button';
 import { Badge } from './ui/badge';
 import AnimatedText from './common/AnimatedText';
 import ReactMarkdown from 'react-markdown';
+import { Helmet } from 'react-helmet';
 
 const BlogPost = () => {
   const { id } = useParams<{ id: string }>();
@@ -49,6 +50,11 @@ const BlogPost = () => {
 
   return (
     <div className="min-h-screen py-20">
+      {/* Add Helmet for page title */}
+      <Helmet>
+        <title>{post.title} | Blog - Rahul Ohri</title>
+      </Helmet>
+      
       <div className="container mx-auto px-4">
         {/* Back navigation */}
         <div className="mb-8">
@@ -93,23 +99,26 @@ const BlogPost = () => {
         
         {/* Blog post content */}
         <Card className="p-6 md:p-10 mb-10">
-          <div className="prose prose-invert max-w-none prose-headings:font-orbitron prose-headings:text-cyan-400 prose-p:text-white/80 prose-strong:text-white prose-strong:font-semibold prose-a:text-cyan-400 prose-a:no-underline hover:prose-a:underline prose-blockquote:border-l-cyan-400 prose-blockquote:bg-white/5 prose-blockquote:p-4 prose-blockquote:not-italic prose-blockquote:rounded-r-md prose-li:text-white/80">
+          <div className="prose prose-invert max-w-none prose-headings:font-orbitron prose-headings:text-cyan-400 prose-p:text-white/80 prose-strong:text-white prose-strong:font-semibold prose-a:text-cyan-400 prose-a:no-underline hover:prose-a:underline prose-blockquote:border-l-cyan-400 prose-blockquote:bg-white/5 prose-blockquote:p-4 prose-blockquote:not-italic prose-blockquote:rounded-r-md prose-li:text-white/80 prose-img:rounded-md prose-img:shadow-lg prose-img:my-8">
             <ReactMarkdown>
               {post.content}
             </ReactMarkdown>
           </div>
           
-          <div className="mt-10 pt-6 border-t border-white/10">
-            <a 
-              href={post.link} 
-              target="_blank" 
-              rel="noopener noreferrer" 
-              className="text-cyan-400 hover:text-cyan-300 transition-colors inline-flex items-center"
-            >
-              Read the original post on rahulohri.com
-              <ArrowRight className="ml-2 h-4 w-4" />
-            </a>
-          </div>
+          {/* Only show original post link if it's an external link */}
+          {post.link && post.link.startsWith('http') && (
+            <div className="mt-10 pt-6 border-t border-white/10">
+              <a 
+                href={post.link} 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="text-cyan-400 hover:text-cyan-300 transition-colors inline-flex items-center"
+              >
+                Read the original post on rahulohri.com
+                <ArrowRight className="ml-2 h-4 w-4" />
+              </a>
+            </div>
+          )}
         </Card>
         
         {/* Related posts */}
