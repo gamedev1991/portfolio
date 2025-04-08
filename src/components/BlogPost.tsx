@@ -24,6 +24,16 @@ const BlogPost = () => {
     const currentPost = blogPosts.find(post => post.id === id);
     setPost(currentPost);
     
+    // Add debugging logs
+    if (currentPost) {
+      console.log('Current post:', currentPost);
+      console.log('Link type check:', {
+        link: currentPost.link,
+        isExternal: currentPost.link.startsWith('http'),
+        startsWithSlash: currentPost.link.startsWith('/')
+      });
+    }
+    
     // Fetch the content from the markdown file
     if (currentPost) {
       setLoading(true);
