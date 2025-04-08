@@ -21,7 +21,7 @@ const Layout = ({ children }: LayoutProps) => {
                 © {new Date().getFullYear()} Rahul Ohri. All rights reserved.
               </p>
             </div>
-            <div className="flex space-x-6">
+            <div className="hidden md:flex items-center space-x-6">
               <a 
                 href="mailto:rahulohri2007@email.com" 
                 className="text-white/60 hover:text-cyan-400 transition-colors text-sm"
@@ -45,10 +45,10 @@ const Layout = ({ children }: LayoutProps) => {
                 Steam Profile
               </a>
               <a 
-                href="/blog" 
+                href="/vibe-coding-projects" 
                 className="text-white/60 hover:text-cyan-400 transition-colors text-sm"
               >
-                Blog
+                Vibe Coding
               </a>
             </div>
           </div>

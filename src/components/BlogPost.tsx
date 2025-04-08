@@ -8,7 +8,6 @@ import Button from './common/Button';
 import { Badge } from './ui/badge';
 import AnimatedText from './common/AnimatedText';
 import ReactMarkdown from 'react-markdown';
-import { Helmet } from 'react-helmet';
 
 const BlogPost = () => {
   const { id } = useParams<{ id: string }>();
@@ -99,10 +98,6 @@ const BlogPost = () => {
 
   return (
     <div className="min-h-screen py-20">
-      {/* Add Helmet for page title */}
-      <Helmet>
-        <title>{post.title} | Blog - Rahul Ohri</title>
-      </Helmet>
       
       <div className="container mx-auto px-4">
         {/* Back navigation */}

@@ -17,6 +17,7 @@ const navItems: NavItem[] = [
   { label: 'Projects', href: '/#projects' },
   { label: 'Skills', href: '/#skills' },
   { label: 'Case Studies', href: '/blog' },
+  { label: 'Vibe Coding', href: '/vibe-coding-projects' },
   { label: 'Contact', href: '/#contact' },
 ];
 
