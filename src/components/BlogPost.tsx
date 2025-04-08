@@ -13,13 +13,36 @@ import { Helmet } from 'react-helmet';
 const BlogPost = () => {
   const { id } = useParams<{ id: string }>();
   const [post, setPost] = useState(blogPosts.find(post => post.id === id));
+  const [content, setContent] = useState<string>('');
+  const [loading, setLoading] = useState(true);
   
   useEffect(() => {
     // Scroll to top when post changes
     window.scrollTo(0, 0);
     
     // Update post based on URL parameter
-    setPost(blogPosts.find(post => post.id === id));
+    const currentPost = blogPosts.find(post => post.id === id);
+    setPost(currentPost);
+    
+    // Fetch the content from the markdown file
+    if (currentPost) {
+      setLoading(true);
+      fetch(currentPost.contentPath)
+        .then(response => {
+          if (!response.ok) {
+            throw new Error('Failed to fetch blog content');
+          }
+          return response.text();
+        })
+        .then(data => {
+          setContent(data);
+          setLoading(false);
+        })
+        .catch(error => {
+          console.error('Error fetching blog content:', error);
+          setLoading(false);
+        });
+    }
   }, [id]);
   
   if (!post) {
@@ -99,46 +122,46 @@ const BlogPost = () => {
         
         {/* Blog post content */}
         <Card className="p-6 md:p-10 mb-10">
-          <div className="prose prose-invert max-w-none prose-headings:font-orbitron prose-headings:text-cyan-400 
-            prose-p:text-white/80 prose-strong:text-white prose-strong:font-semibold 
-            prose-a:text-cyan-400 prose-a:no-underline hover:prose-a:underline 
-            prose-blockquote:border-l-cyan-400 prose-blockquote:bg-white/5 
-            prose-blockquote:p-4 prose-blockquote:not-italic prose-blockquote:rounded-r-md 
-            prose-li:text-white/80 
-            prose-img:rounded-md prose-img:shadow-lg prose-img:my-8 prose-img:mx-auto prose-img:max-w-[85%]">
-            <ReactMarkdown
-              components={{
-                img: ({ node, ...props }) => (
-                  <div className="flex justify-center my-8">
-                    <img {...props} className="rounded-md shadow-lg max-w-[85%] mx-auto" />
-                  </div>
-                ),
-                p: ({ node, ...props }) => (
-                  <p {...props} className="mb-6 leading-relaxed text-white/80" />
-                ),
-                h1: ({ node, ...props }) => (
-                  <h1 {...props} className="text-3xl md:text-4xl font-orbitron text-cyan-400 mb-6 mt-8" />
-                ),
-                h2: ({ node, ...props }) => (
-                  <h2 {...props} className="text-2xl md:text-3xl font-orbitron text-cyan-400 mb-4 mt-8" />
-                ),
-                h3: ({ node, ...props }) => (
-                  <h3 {...props} className="text-xl md:text-2xl font-orbitron text-cyan-400 mb-4 mt-6" />
-                ),
-                ul: ({ node, ...props }) => (
-                  <ul {...props} className="list-disc pl-6 mb-6 space-y-2" />
-                ),
-                ol: ({ node, ...props }) => (
-                  <ol {...props} className="list-decimal pl-6 mb-6 space-y-2" />
-                ),
-                li: ({ node, ...props }) => (
-                  <li {...props} className="text-white/80 mb-1" />
-                ),
-              }}
-            >
-              {post.content}
-            </ReactMarkdown>
-          </div>
+          {loading ? (
+            <div className="flex justify-center items-center py-20">
+              <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-cyan-400"></div>
+            </div>
+          ) : (
+            <div className="prose prose-invert max-w-none prose-headings:font-orbitron prose-headings:text-cyan-400 
+              prose-h2:text-3xl prose-h2:mt-8 prose-h2:mb-6 
+              prose-h3:text-2xl prose-h3:mt-6 prose-h3:mb-4
+              prose-p:text-white/80 prose-p:leading-relaxed prose-p:my-4
+              prose-strong:text-white prose-strong:font-semibold 
+              prose-a:text-cyan-400 prose-a:no-underline hover:prose-a:underline 
+              prose-blockquote:border-l-cyan-400 prose-blockquote:bg-white/5 
+              prose-blockquote:p-4 prose-blockquote:not-italic prose-blockquote:rounded-r-md 
+              prose-li:text-white/80 prose-li:my-1
+              prose-img:rounded-md prose-img:shadow-lg prose-img:my-8 prose-img:mx-auto prose-img:max-w-[85%] md:prose-img:max-w-[70%]">
+              <ReactMarkdown
+                components={{
+                  img: ({ node, ...props }) => (
+                    <div className="flex justify-center my-8">
+                      <img {...props} className="rounded-md shadow-lg max-w-[85%] md:max-w-[70%] mx-auto" alt={props.alt || "Blog image"} />
+                    </div>
+                  ),
+                  blockquote: ({ node, ...props }) => (
+                    <blockquote {...props} className="border-l-4 border-cyan-400 bg-white/5 p-4 rounded-r-md my-6" />
+                  ),
+                  ul: ({ node, ...props }) => (
+                    <ul {...props} className="list-disc pl-6 my-4 space-y-2" />
+                  ),
+                  ol: ({ node, ...props }) => (
+                    <ol {...props} className="list-decimal pl-6 my-4 space-y-2" />
+                  ),
+                  li: ({ node, ...props }) => (
+                    <li {...props} className="text-white/80 pl-2" />
+                  ),
+                }}
+              >
+                {content}
+              </ReactMarkdown>
+            </div>
+          )}
           
           {/* Only show original post link if it's an external link */}
           {post.link && post.link.startsWith('http') && (
