@@ -1,45 +1,35 @@
-import { Terminal, Code, BrainCircuit, Rocket } from 'lucide-react';
-
 export interface VibeProject {
   title: string;
   description: string;
   features: string[];
   link: string;
-  icon: React.ReactNode;
+  thumbnail: string; // Changed from icon to thumbnail path
 }
 
 export const vibeCodingProjects: VibeProject[] = [
   {
-    title: "AI Review Analyzer",
-    description: "LLM-powered tool for summarizing app reviews into actionable insights",
+    title: "Tic Tac Toe",
+    description: "The Tic-Tac-Toe AI project is an interactive web-based game that allows users to play the classic Tic-Tac-Toe game against each other or against an AI opponent",
     features: [
-      "Multi-lingual support",
-      "Sentiment analysis",
-      "Exportable reports"
+      "Real-Time Multiplayer and AI Gameplay",
+      "Game State Management",
+      "Responsive User Interface"
     ],
-    link: "/vibe-coding-projects/review-analyzer",
-    icon: <Terminal size={20} />
+    link: "https://tic-tac-toe-ai-ashen.vercel.app/",
+    thumbnail: "/Images/tic-tac-toe-thumb.jpg" // Add image to public/images/
   },
   {
-    title: "Play Store Scout",
-    description: "Automated scraping & analysis of new Play Store releases",
+    title: "Math Tutor Online",
+    description: "Many parents and students struggle to find reliable, personalized, and exam-focused maths tutoring online...",
     features: [
-      "Weekly automated reports",
-      "Competitor analysis",
-      "Airtable integration"
+      "Personalized Tutoring Pitch",
+      "Comparison Table",
+      "Exam-Centric Approach",
+      "Modern Tools Mentioned",
+      "Lead Funnel Ready",
+      "Responsive Design"
     ],
-    link: "/vibe-coding-projects/playstore-scout",
-    icon: <Code size={20} />
-  },
-  {
-    title: "Feature Predictor",
-    description: "GPT-powered feature suggestion engine based on user feedback",
-    features: [
-      "Natural language processing",
-      "Roadmap generation",
-      "Priority scoring"
-    ],
-    link: "/vibe-coding-projects/feature-predictor",
-    icon: <BrainCircuit size={20} />
+    link: "https://mathtutoronline.in/",
+    thumbnail: "/Images/math-tutor-thumb.jpg" // Add image to public/images/
   }
 ];
