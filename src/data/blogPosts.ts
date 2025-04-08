@@ -1,4 +1,3 @@
-
 import { format, parseISO } from 'date-fns';
 
 export interface BlogPost {
@@ -32,7 +31,7 @@ export const blogPosts: BlogPost[] = [
     tags: ["career", "product management", "journey", "development"],
     link: "/blog/how-i-became-a-product-manager",
     imageUrl: "/placeholder.svg",
-    contentPath: "/src/data/blog-posts/how-i-became-a-product-manager.md", 
+    contentPath: "/content/blog-posts/how-i-became-a-product-manager.md", 
     featured: true,
   },
   {
@@ -45,7 +44,7 @@ export const blogPosts: BlogPost[] = [
     tags: ["PRD", "product documentation", "feature development", "user engagement"],
     link: "/blog/product-requirement-document-movie-review",
     imageUrl: "/placeholder.svg",
-    contentPath: "/src/data/blog-posts/product-requirement-document-movie-review.md", // Added leading slash for consistency
+    contentPath: "/content/blog-posts/product-requirement-document-movie-review.md", 
   },
   {
     id: "case-study-stick-cricket-live",
@@ -57,7 +56,7 @@ export const blogPosts: BlogPost[] = [
     tags: ["game design", "monetization", "user engagement", "mobile gaming"],
     link: "/blog/case-study-stick-cricket-live", // Changed to internal link
     imageUrl: "/placeholder.svg",
-    contentPath: "/src/data/blog-posts/case-study-stick-cricket-live.md",
+    contentPath: "/content/blog-posts/case-study-stick-cricket-live.md",
   },
   {
     id: "case-study-gardenscapes",
@@ -69,7 +68,7 @@ export const blogPosts: BlogPost[] = [
     tags: ["game design", "monetization", "mobile gaming", "casual games"],
     link: "/blog/case-study-gardenscapes", // Changed to internal link
     imageUrl: "/placeholder.svg",
-    contentPath: "/src/data/blog-posts/case-study-gardenscapes.md",
+    contentPath: "/content/blog-posts/case-study-gardenscapes.md",
   }
 ];
 
