@@ -43,9 +43,9 @@ export const blogPosts: BlogPost[] = [
     dateFormatted: formatDate("2021-02-04"),
     category: "product-management",
     tags: ["PRD", "product documentation", "feature development", "user engagement"],
-    link: "/blog/product-requirement-document-movie-review", // Changed to internal link
+    link: "/blog/product-requirement-document-movie-review", // Ensure this is an internal link
     imageUrl: "/placeholder.svg",
-    contentPath: "/src/data/blog-posts/product-requirement-document-movie-review.md",
+    contentPath: "/src/data/blog-posts/product-requirement-document-movie-review.md", // Verify this path is correct
   },
   {
     id: "case-study-stick-cricket-live",

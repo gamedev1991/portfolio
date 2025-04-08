@@ -24,20 +24,14 @@ const BlogPost = () => {
     const currentPost = blogPosts.find(post => post.id === id);
     setPost(currentPost);
     
-    // Add debugging logs
-    if (currentPost) {
-      console.log('Current post:', currentPost);
-      console.log('Link type check:', {
-        link: currentPost.link,
-        isExternal: currentPost.link.startsWith('http'),
-        startsWithSlash: currentPost.link.startsWith('/')
-      });
-    }
+    // Clear previous content when changing posts
+    setContent('');
     
     // Fetch the content from the markdown file
     if (currentPost) {
       setLoading(true);
-      fetch(currentPost.contentPath)
+      // Add cache-busting parameter to prevent browser caching
+      fetch(`${currentPost.contentPath}?v=${new Date().getTime()}`)
         .then(response => {
           if (!response.ok) {
             throw new Error('Failed to fetch blog content');
@@ -173,20 +167,7 @@ const BlogPost = () => {
             </div>
           )}
           
-          {/* Only show original post link if it's an external link */}
-          {post.link && post.link.startsWith('http') && (
-            <div className="mt-10 pt-6 border-t border-white/10">
-              <a 
-                href={post.link} 
-                target="_blank" 
-                rel="noopener noreferrer" 
-                className="text-cyan-400 hover:text-cyan-300 transition-colors inline-flex items-center"
-              >
-                Read the original post on rahulohri.com
-                <ArrowRight className="ml-2 h-4 w-4" />
-              </a>
-            </div>
-          )}
+          {/* Remove the external link section completely since all links are now internal */}
         </Card>
         
         {/* Related posts */}
