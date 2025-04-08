@@ -1,54 +1,38 @@
 # Product Requirement Document: Trending Movies Feature
 
 ## Overview
-This PRD outlines the implementation of a "Trending Movies" feature for a movie review website, designed to increase user engagement by highlighting popular films based on review data.
+This PRD outlines the implementation of a "Trending Movies" feature for a movie review website, designed to increase user engagement and time spent on the platform.
 
 ## Problem Statement
-A movie review website needs to identify and showcase emerging movie trends based on existing review data to help users discover popular films they might want to watch.
+Users currently struggle to discover popular movies that align with their interests, leading to reduced engagement and limited return visits.
 
-## User Story
-As a user, I want to see trending movies so that I can discover popular films to watch.
+## Goals
+- Increase daily active users by 15%
+- Increase average session duration by 20%
+- Improve content discovery metrics by highlighting trending content
 
-## Assumptions
-- The website will showcase the top 10 trending movies
-- Trending status will be determined by multiple factors including ratings and review content
+## User Stories
+- As a movie enthusiast, I want to see which movies are currently trending so I can stay informed about popular content
+- As a casual user, I want recommendations based on what's popular to help guide my viewing choices
+- As a return visitor, I want to see trending content updated regularly to keep me engaged
 
-## Feature Description
-The "Trending Movies" feature will display popular movies based on review metrics, providing users with an easy way to discover highly-rated and frequently discussed films.
+## Feature Specifications
 
-## Requirements
-
-### Core Functionality
-- **Ranking Algorithm**: Sort movies in descending order based on:
-  - Release date
-  - Number of ratings
-  - Average rating score
-  - Frequency of positive keywords (e.g., "must-watch", "great movie", "good story", "entertaining")
-
-- **Display**: The top 10 movies will appear in a dedicated "Trending Movies" section on the website
+### Trending Algorithm
+- Based on: view count, review submissions, social shares, and recency
+- Weighting factors: 40% view count, 30% review activity, 20% social shares, 10% recency
+- Time window: Rolling 7-day period with daily updates
 
 ### UI/UX Requirements
-- **Layout**: Implement a scrollable horizontal list of movie thumbnails *(Must Have)*
-- **Movie Information**:
-  - Each thumbnail must include: movie image, title, and rating *(Must Have)*
-  - Optional inclusion of user sentiment data (e.g., "90% users say it's a must-watch") *(Good to Have)*
-- **Interactive Elements**:
-  - "Watch Trailer" CTA button that directs users to the movie trailer *(Must Have)*
-  - "Add to Watchlist" CTA button for users to save interesting movies *(Nice to Have)*
-- **Carousel Behavior**:
-  - Infinite scroll functionality (first item reappears after the last) *(Nice to Have)*
+- Prominent placement on homepage (above the fold)
+- Horizontal scrollable carousel with 5 visible items
+- Movie cards showing: poster, title, trending rank, and trend direction indicator
+- Visual indicator for movies that have moved up in ranking
 
-### Filtering Capabilities
-- Implement filters for the trending list by: *(Must Have)*
-  - Genre
-  - Language
-  - Format (3D/2D)
-  - *Note: This is a priority feature as no other review site currently offers this functionality*
-
-### Update Requirements
-- The trending list should update weekly, coinciding with new movie releases *(Must Have)*
-- Movie ratings should update in real-time when overall ratings change *(Must Have)*
-- The list should reorder when movie rankings change *(Good to Have)*
+### Technical Considerations
+- Data storage for trend calculations
+- Caching strategy to reduce load times
+- Analytics implementation to track feature performance
 
 ## Success Metrics
 We will measure the success of this feature through:

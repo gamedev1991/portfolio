@@ -30,16 +30,38 @@ const BlogPost = () => {
     // Fetch the content from the markdown file
     if (currentPost) {
       setLoading(true);
+      console.log('Fetching content from:', currentPost.contentPath);
+      
+      // Normalize the path - ensure it starts with a slash for consistency
+      const normalizedPath = currentPost.contentPath.startsWith('/') 
+        ? currentPost.contentPath 
+        : `/${currentPost.contentPath}`;
+      
       // Add cache-busting parameter to prevent browser caching
-      fetch(`${currentPost.contentPath}?v=${new Date().getTime()}`)
+      const cacheBuster = `?v=${new Date().getTime()}`;
+      
+      fetch(normalizedPath + cacheBuster)
         .then(response => {
+          console.log('Response status:', response.status);
           if (!response.ok) {
-            throw new Error('Failed to fetch blog content');
+            throw new Error(`Failed to fetch blog content: ${response.status}`);
           }
           return response.text();
         })
         .then(data => {
-          setContent(data);
+          // Process the markdown to remove duplicate headers
+          // This regex finds all instances of the main header and keeps only the first one
+          const mainHeaderRegex = /^# .+$/gm;
+          const headers = data.match(mainHeaderRegex) || [];
+          
+          let processedContent = data;
+          if (headers.length > 1) {
+            // Keep only the first occurrence of the main header
+            const firstHeader = headers[0];
+            processedContent = firstHeader + data.replace(mainHeaderRegex, '');
+          }
+          
+          setContent(processedContent);
           setLoading(false);
         })
         .catch(error => {
@@ -143,13 +165,17 @@ const BlogPost = () => {
               prose-img:rounded-md prose-img:shadow-lg prose-img:my-8 prose-img:mx-auto prose-img:max-w-[85%] md:prose-img:max-w-[70%]">
               <ReactMarkdown
                 components={{
-                  img: ({ node, ...props }) => (
-                    <div className="flex justify-center my-8">
-                      <img {...props} className="rounded-md shadow-lg max-w-[85%] md:max-w-[70%] mx-auto" alt={props.alt || "Blog image"} />
-                    </div>
+                  h1: ({ node, ...props }) => (
+                    <h1 {...props} className="text-3xl md:text-4xl font-bold text-cyan-400 font-orbitron mb-6 mt-2" />
                   ),
-                  blockquote: ({ node, ...props }) => (
-                    <blockquote {...props} className="border-l-4 border-cyan-400 bg-white/5 p-4 rounded-r-md my-6" />
+                  h2: ({ node, ...props }) => (
+                    <h2 {...props} className="text-2xl md:text-3xl font-bold text-cyan-400 font-orbitron mb-4 mt-8" />
+                  ),
+                  h3: ({ node, ...props }) => (
+                    <h3 {...props} className="text-xl md:text-2xl font-bold text-cyan-400 font-orbitron mb-3 mt-6" />
+                  ),
+                  p: ({ node, ...props }) => (
+                    <p {...props} className="text-white/80 leading-relaxed my-4" />
                   ),
                   ul: ({ node, ...props }) => (
                     <ul {...props} className="list-disc pl-6 my-4 space-y-2" />
@@ -160,14 +186,20 @@ const BlogPost = () => {
                   li: ({ node, ...props }) => (
                     <li {...props} className="text-white/80 pl-2" />
                   ),
+                  img: ({ node, ...props }) => (
+                    <div className="flex justify-center my-8">
+                      <img {...props} className="rounded-md shadow-lg max-w-[85%] md:max-w-[70%] mx-auto" alt={props.alt || "Blog image"} />
+                    </div>
+                  ),
+                  blockquote: ({ node, ...props }) => (
+                    <blockquote {...props} className="border-l-4 border-cyan-400 bg-white/5 p-4 rounded-r-md my-6" />
+                  ),
                 }}
               >
                 {content}
               </ReactMarkdown>
             </div>
           )}
-          
-          {/* Remove the external link section completely since all links are now internal */}
         </Card>
         
         {/* Related posts */}

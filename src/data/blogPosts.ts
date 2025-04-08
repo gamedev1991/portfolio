@@ -30,9 +30,9 @@ export const blogPosts: BlogPost[] = [
     dateFormatted: formatDate("2021-07-12"),
     category: "product-management",
     tags: ["career", "product management", "journey", "development"],
-    link: "/blog/how-i-became-a-product-manager", // Internal link
+    link: "/blog/how-i-became-a-product-manager",
     imageUrl: "/placeholder.svg",
-    contentPath: "/src/data/blog-posts/how-i-became-a-product-manager.md",
+    contentPath: "/src/data/blog-posts/how-i-became-a-product-manager.md", 
     featured: true,
   },
   {
@@ -43,9 +43,9 @@ export const blogPosts: BlogPost[] = [
     dateFormatted: formatDate("2021-02-04"),
     category: "product-management",
     tags: ["PRD", "product documentation", "feature development", "user engagement"],
-    link: "/blog/product-requirement-document-movie-review", // Ensure this is an internal link
+    link: "/blog/product-requirement-document-movie-review",
     imageUrl: "/placeholder.svg",
-    contentPath: "/src/data/blog-posts/product-requirement-document-movie-review.md", // Verify this path is correct
+    contentPath: "/src/data/blog-posts/product-requirement-document-movie-review.md", // Added leading slash for consistency
   },
   {
     id: "case-study-stick-cricket-live",
