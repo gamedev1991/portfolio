@@ -1,26 +1,60 @@
 // Service Worker for Portfolio
 const CACHE_NAME = 'portfolio-cache-v1';
+const ASSETS_CACHE_NAME = 'portfolio-assets-cache-v1';
+
+// Define different cache strategies for different types of resources
 const urlsToCache = [
   '/',
   '/index.html',
+  '/manifest.json'
+];
+
+const assetsToCache = [
   '/assets/index-h7Xa29CT.css',
   '/assets/index-DBDLGZwl.js',
   '/assets/vendor-B3U6yQ0Z.js'
 ];
 
-// Install event - cache essential files
+// Security-focused installation
 self.addEventListener('install', event => {
   event.waitUntil(
-    caches.open(CACHE_NAME)
-      .then(cache => {
-        console.log('Opened cache');
-        return cache.addAll(urlsToCache);
-      })
+    Promise.all([
+      // Cache core app shell
+      caches.open(CACHE_NAME)
+        .then(cache => {
+          console.log('Opened core cache');
+          return cache.addAll(urlsToCache);
+        }),
+      // Cache assets separately with different strategy
+      caches.open(ASSETS_CACHE_NAME)
+        .then(cache => {
+          console.log('Opened assets cache');
+          return cache.addAll(assetsToCache);
+        })
+    ])
   );
+  // Force immediate activation
+  self.skipWaiting();
 });
 
-// Fetch event - serve from cache if available, otherwise fetch from network
+// Security-enhanced fetch event
 self.addEventListener('fetch', event => {
+  // Don't handle browser-extension requests or non-GET requests
+  if (
+    !event.request.url.startsWith(self.location.origin) || 
+    event.request.method !== 'GET'
+  ) {
+    return;
+  }
+
+  // Don't cache admin paths or sensitive data
+  if (
+    event.request.url.includes('/admin') || 
+    event.request.url.includes('/api')
+  ) {
+    return fetch(event.request);
+  }
+
   event.respondWith(
     caches.match(event.request)
       .then(response => {
@@ -42,25 +76,41 @@ self.addEventListener('fetch', event => {
             // Clone the response
             const responseToCache = response.clone();
             
-            caches.open(CACHE_NAME)
-              .then(cache => {
-                // Don't cache API calls or external resources
-                if (!event.request.url.includes('/api/') && 
-                    event.request.url.startsWith(self.location.origin)) {
+            // Use different caching strategies based on resource type
+            if (event.request.url.includes('/assets/')) {
+              // Long-term caching for assets
+              caches.open(ASSETS_CACHE_NAME)
+                .then(cache => {
                   cache.put(event.request, responseToCache);
-                }
-              });
+                });
+            } else if (
+              !event.request.url.includes('/_headers') && 
+              !event.request.url.includes('/.htaccess') &&
+              !event.request.url.includes('/httpd.conf')
+            ) {
+              // Don't cache sensitive configuration files
+              caches.open(CACHE_NAME)
+                .then(cache => {
+                  cache.put(event.request, responseToCache);
+                });
+            }
               
             return response;
           }
-        );
+        ).catch(error => {
+          // Network failed, try to serve from cache for HTML requests
+          if (event.request.url.endsWith('.html') || event.request.mode === 'navigate') {
+            return caches.match('/index.html');
+          }
+          throw error;
+        });
       })
   );
 });
 
-// Activate event - clean up old caches
+// Activate event - clean up old caches securely
 self.addEventListener('activate', event => {
-  const cacheWhitelist = [CACHE_NAME];
+  const cacheWhitelist = [CACHE_NAME, ASSETS_CACHE_NAME];
   
   event.waitUntil(
     caches.keys().then(cacheNames => {
@@ -71,6 +121,9 @@ self.addEventListener('activate', event => {
           }
         })
       );
+    }).then(() => {
+      // Claim clients so the service worker is in control immediately
+      return self.clients.claim();
     })
   );
 });
