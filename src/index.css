@@ -236,4 +236,54 @@
       background-position: 200% center;
     }
   }
+
+  /* Fix for direct route access styling issues */
+  html.blog-page-loaded,
+  body.route-loaded {
+    background-color: #030712 !important; /* Ensure dark background is applied */
+    color: #f8fafc !important; /* Ensure text is visible */
+  }
+
+  html.blog-page-loaded header,
+  body.route-loaded header {
+    visibility: visible !important;
+    opacity: 1 !important;
+    display: block !important;
+  }
+
+  /* Ensure content is visible when directly accessing routes */
+  html.blog-page-loaded main,
+  body.route-loaded main {
+    opacity: 1 !important;
+    visibility: visible !important;
+    display: block !important;
+  }
+
+  /* Fix for direct blog page access */
+  .blog-page-loaded #blog {
+    display: block !important;
+    visibility: visible !important;
+  }
+
+  /* Loading state styles */
+  .blog-content-loading {
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+  }
+
+  .blog-content-ready {
+    opacity: 1;
+    transition: opacity 0.3s ease-in-out;
+  }
+
+  /* App container loading states */
+  .app-container.content-loading {
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+  }
+
+  .app-container.content-loaded {
+    opacity: 1;
+    transition: opacity 0.3s ease-in-out;
+  }
 }
