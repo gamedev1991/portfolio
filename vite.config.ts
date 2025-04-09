@@ -20,13 +20,34 @@ export default defineConfig(({ mode }) => ({
       output: {
         manualChunks: {
           vendor: ['react', 'react-dom', 'react-router-dom'],
+          ui: [
+            '@radix-ui/react-navigation-menu',
+            '@radix-ui/react-dialog',
+            '@radix-ui/react-dropdown-menu',
+            'lucide-react',
+            'next-themes'
+          ],
+          markdown: ['react-markdown']
         },
       },
     },
+    // Optimize chunk size
+    chunkSizeWarningLimit: 1000,
+    // Minify output for production
+    minify: mode !== 'development',
   },
   resolve: {
     alias: {
       "@": path.resolve(__dirname, "./src"),
     },
   },
+  // Optimize dependency pre-bundling
+  optimizeDeps: {
+    include: [
+      'react',
+      'react-dom',
+      'react-router-dom',
+      'react-markdown'
+    ]
+  }
 }));
