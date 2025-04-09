@@ -31,6 +31,7 @@ const AppRoutes = () => {
     // Check for direct_to_blog parameter
     const urlParams = new URLSearchParams(window.location.search);
     const directToBlog = urlParams.get('direct_to_blog');
+    const directToBlogPost = urlParams.get('direct_to_blog_post');
     
     if (directToBlog === 'true' && location.pathname === '/') {
       // Remove the parameter from the URL without refreshing
@@ -39,6 +40,16 @@ const AppRoutes = () => {
       
       // Navigate to blog page
       navigate('/blog');
+    }
+    
+    // Handle direct access to individual blog posts
+    if (directToBlogPost && location.pathname === '/') {
+      // Remove the parameter from the URL without refreshing
+      const newUrl = window.location.pathname;
+      window.history.replaceState({}, document.title, newUrl);
+      
+      // Navigate to the specific blog post
+      navigate(`/blog/${directToBlogPost}`);
     }
 
     // Force a style refresh when directly accessing routes

@@ -3,35 +3,16 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>How I became a Product Manager | Blog - Rahul Ohri</title>
-  <!-- Add base tag to ensure assets load correctly -->
-  <base href="/">
-  <!-- Add your site's CSS -->
-  <link rel="stylesheet" href="./assets/index-nxkrXtxW.css">
+  <title>How I Became a Product Manager | Blog - Rahul Ohri</title>
+  <meta name="description" content="Chronicles the journey from a Unity developer to a Product Manager, highlighting challenges and strategies.">
   <script>
-    // Store the current path for the app to use
-    window.blogRedirectPath = '/blog/how-i-became-a-product-manager';
-    
-    // Load the main app but tell it to navigate to this blog post
-    document.addEventListener('DOMContentLoaded', function() {
-      // This will be picked up by your React app to navigate to the correct route
-      sessionStorage.setItem('redirectTo', '/blog/how-i-became-a-product-manager');
-    });
+    // Redirect to the main app with a special flag for this specific blog post
+    window.location.href = '/?direct_to_blog_post=how-i-became-a-product-manager';
   </script>
 </head>
-<body>
-  <div id="root">
-    <!-- Temporary content while the app loads -->
-    <div style="display: flex; justify-content: center; align-items: center; height: 100vh; background-color: #0a0a0a; color: #f0f0f0; font-family: 'Arial', sans-serif;">
-      <div style="text-align: center;">
-        <h1 style="color: #00ffff; margin-bottom: 20px;">Loading Blog Post...</h1>
-        <p>How I became a Product Manager</p>
-      </div>
-    </div>
+<body style="background-color: #030712; color: #f8fafc; font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;">
+  <div style="display: flex; justify-content: center; align-items: center; height: 100vh;">
+    <p>Redirecting to blog post...</p>
   </div>
-  
-  <!-- Load the main app scripts -->
-  <script type="module" crossorigin src="./assets/index-B4NzbjtN.js"></script>
-  <script type="module" crossorigin src="./assets/vendor-DoQ6eWsz.js"></script>
 </body>
 </html>
