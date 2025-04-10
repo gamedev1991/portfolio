@@ -1,8 +1,8 @@
-
 import { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
 import Button from './common/Button';
 import { Link, useLocation } from 'react-router-dom';
+import { useMediaQuery } from 'react-responsive';
 
 interface NavItem {
   label: string;
@@ -26,6 +26,9 @@ const Navbar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const location = useLocation();
   const isHomePage = location.pathname === '/';
+
+  // Media query to check if the screen is mobile
+  const isMobile = useMediaQuery({ query: '(max-width: 768px)' });
 
   useEffect(() => {
     const handleScroll = () => {
@@ -93,39 +96,45 @@ const Navbar = () => {
           </Link>
 
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center space-x-1">
-            {navItems.map(renderNavLink)}
-          </nav>
+          {!isMobile && (
+            <nav className="hidden md:flex items-center space-x-1">
+              {navItems.map(renderNavLink)}
+            </nav>
+          )}
 
           {/* Mobile Menu Toggle */}
-          <button 
-            className="md:hidden text-white focus:outline-none"
-            onClick={toggleMobileMenu}
-          >
-            {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
-          </button>
+          {isMobile && (
+            <button 
+              className="md:hidden text-white focus:outline-none"
+              onClick={toggleMobileMenu}
+            >
+              {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+            </button>
+          )}
         </div>
       </div>
 
       {/* Mobile Navigation */}
-      <div 
-        className={`md:hidden absolute top-full left-0 right-0 bg-cyber-darker/95 backdrop-blur-lg border-b border-cyan-500/20 transition-all duration-300 ease-in-out ${
-          isMobileMenuOpen ? 'max-h-screen py-4' : 'max-h-0 py-0 overflow-hidden'
-        }`}
-      >
-        <div className="container mx-auto px-4 flex flex-col space-y-3">
-          {navItems.map((item) => (
-            <Link
-              key={item.label}
-              to={item.href.startsWith('#') && !isHomePage ? `/${item.href}` : item.href}
-              className="px-3 py-2 text-sm font-medium text-white/80 hover:text-cyan-400 transition-colors border-l-2 border-transparent hover:border-cyan-400"
-              onClick={() => setIsMobileMenuOpen(false)}
-            >
-              {item.label}
-            </Link>
-          ))}
+      {isMobile && (
+        <div 
+          className={`md:hidden absolute top-full left-0 right-0 bg-cyber-darker/95 backdrop-blur-lg border-b border-cyan-500/20 transition-all duration-300 ease-in-out ${
+            isMobileMenuOpen ? 'max-h-screen py-4' : 'max-h-0 py-0 overflow-hidden'
+          }`}
+        >
+          <div className="container mx-auto px-4 flex flex-col space-y-3">
+            {navItems.map((item) => (
+              <Link
+                key={item.label}
+                to={item.href.startsWith('#') && !isHomePage ? `/${item.href}` : item.href}
+                className="px-3 py-2 text-sm font-medium text-white/80 hover:text-cyan-400 transition-colors border-l-2 border-transparent hover:border-cyan-400"
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
+                {item.label}
+              </Link>
+            ))}
+          </div>
         </div>
-      </div>
+      )}
     </header>
   );
 };
