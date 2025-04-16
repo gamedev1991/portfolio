@@ -11,6 +11,7 @@ export interface BlogPost {
   link: string;
   imageUrl?: string;
   contentPath: string; // Path to the content file instead of inline content
+  pdfPath?: string; // Path to the PDF file
   featured?: boolean;
 }
 
@@ -69,6 +70,19 @@ export const blogPosts: BlogPost[] = [
     link: "/blog/case-study-gardenscapes", // Changed to internal link
     imageUrl: "/placeholder.svg",
     contentPath: "/blog/case-study-gardenscapes/case-study-gardenscapes.md",
+  },
+  {
+    id: "zynga-game-assignment",
+    title: "Zynga Game Assignment",
+    summary: "A detailed PDF assignment for Zynga's game design challenge, showcasing solutions and design thinking.",
+    publishDate: "2024-04-17",
+    dateFormatted: formatDate("2024-04-17"),
+    category: "case-study",
+    tags: ["game design", "assignment", "zynga", "pdf"],
+    link: "/blog/zynga-game-assignment",
+    imageUrl: "/placeholder.svg",
+    contentPath: "",
+    pdfPath: "/blog/Zynga-Game-Assignement.pdf"
   }
 ];
 

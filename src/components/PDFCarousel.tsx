@@ -1,0 +1,67 @@
+import React, { useState } from 'react';
+import { Document, Page, pdfjs } from 'react-pdf';
+import 'react-pdf/dist/esm/Page/AnnotationLayer.css';
+import 'react-pdf/dist/esm/Page/TextLayer.css';
+
+// Use the worker from the public directory to avoid Vite/TypeScript issues
+pdfjs.GlobalWorkerOptions.workerSrc = '/pdf.worker.min.js';
+
+interface PDFCarouselProps {
+  pdfUrl: string;
+}
+
+const PDFCarousel: React.FC<PDFCarouselProps> = ({ pdfUrl }) => {
+  console.log('[PDFCarousel] pdfUrl:', pdfUrl);
+  const [numPages, setNumPages] = useState<number>(0);
+  const [pageNumber, setPageNumber] = useState<number>(1);
+
+  const onDocumentLoadSuccess = ({ numPages }: { numPages: number }) => {
+    console.log('[PDFCarousel] PDF loaded successfully. Number of pages:', numPages);
+    setNumPages(numPages);
+    setPageNumber(1);
+  };
+
+  const onDocumentLoadError = (error: any) => {
+    console.error('[PDFCarousel] Failed to load PDF:', error);
+  };
+
+  const goToPrevPage = () => setPageNumber((prev) => (prev > 1 ? prev - 1 : prev));
+  const goToNextPage = () => setPageNumber((prev) => (prev < numPages ? prev + 1 : prev));
+
+  return (
+    <div className="flex flex-col items-center w-full">
+      <div className="flex items-center gap-4 mb-2">
+        <button
+          onClick={goToPrevPage}
+          disabled={pageNumber <= 1}
+          className="px-3 py-1 rounded bg-gray-200 dark:bg-gray-700 disabled:opacity-50"
+        >
+          Prev
+        </button>
+        <span>
+          Page {pageNumber} of {numPages}
+        </span>
+        <button
+          onClick={goToNextPage}
+          disabled={pageNumber >= numPages}
+          className="px-3 py-1 rounded bg-gray-200 dark:bg-gray-700 disabled:opacity-50"
+        >
+          Next
+        </button>
+      </div>
+      <div className="w-full flex justify-center">
+        <div className="max-w-4xl w-full flex justify-center">
+          <Document 
+            file={pdfUrl} 
+            onLoadSuccess={onDocumentLoadSuccess} 
+            onLoadError={onDocumentLoadError}
+            loading={<div>Loading PDF...</div>}>
+            <Page pageNumber={pageNumber} width={900} loading={<div>Loading page...</div>} />
+          </Document>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default PDFCarousel;
