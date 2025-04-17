@@ -72,17 +72,17 @@ export const blogPosts: BlogPost[] = [
     contentPath: "/blog/case-study-gardenscapes/case-study-gardenscapes.md",
   },
   {
-    id: "zynga-game-assignment",
-    title: "Zynga Game Assignment",
-    summary: "A detailed PDF assignment for Zynga's game design challenge, showcasing solutions and design thinking.",
+    id: "wizard-of-oz",
+    title: "Wizard of Oz",
+    summary: "A case study for increasing revenue of Zynga's game Wizard Of OZ, showcasing solutions and design thinking.",
     publishDate: "2024-04-17",
     dateFormatted: formatDate("2024-04-17"),
     category: "case-study",
     tags: ["game design", "assignment", "zynga", "pdf"],
-    link: "/blog/zynga-game-assignment",
+    link: "/blog/wizard-of-oz",
     imageUrl: "/placeholder.svg",
     contentPath: "",
-    pdfPath: "/blog/Zynga-Game-Assignement.pdf"
+    pdfPath: "/blog/wizard-of-oz.pdf"
   }
 ];
 
