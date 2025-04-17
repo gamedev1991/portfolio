@@ -1,5 +1,3 @@
-# Product Requirement Document: Trending Movies Feature
-
 ## Overview
 This PRD outlines the implementation of a "Trending Movies" feature for a movie review website, designed to increase user engagement and time spent on the platform.
 

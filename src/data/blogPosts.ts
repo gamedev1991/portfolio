@@ -74,7 +74,7 @@ export const blogPosts: BlogPost[] = [
   {
     id: "wizard-of-oz",
     title: "Wizard of Oz",
-    summary: "A case study for increasing revenue of Zynga's game Wizard Of OZ, showcasing solutions and design thinking.",
+    summary: "Case Study: Increase revenue of Zynga's game Wizard Of Oz",
     publishDate: "2024-04-17",
     dateFormatted: formatDate("2024-04-17"),
     category: "case-study",

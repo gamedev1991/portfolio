@@ -1,90 +1,41 @@
-# Case Study: Increasing Engagement & Monetization for Gardenscapes
+# Introduction
 
-## Game Overview
-Gardenscapes is a popular match-3 puzzle game with garden restoration elements. Players solve puzzles to earn stars, which are used to complete tasks in the garden.
+Gardenscapes – New Acres is a casual game developed by Russian studio Playrix that combines elements of Match 3 gameplay with city building.
 
-## Current State Analysis
+The core gameplay is based on swapping two adjacent elements to make a row or column or group of at least three elements. By completing match-three levels, players earn stars and coins to complete tasks and progress through the storyline by unlocking new areas.
 
-### Strengths
-- Strong core loop: solve puzzles → earn stars → restore garden → narrative progression
-- Appealing art style and characters
-- Regular content updates with new areas and puzzles
-- Strong IP recognition in the casual gaming market
+As players complete tasks, they are allowed to choose between three different decor items for a specific part of their garden, which allows them to decorate their garden.
 
-### Opportunities
-- Improve mid-term retention (D14-D30)
-- Increase conversion rate of non-paying users
-- Enhance social engagement features
-- Optimize monetization without disrupting player experience
+## Hypothesis 1
 
-## Engagement Improvement Strategies
+To play the match 3 levels one needs lives, without lives, one cannot play the match 3 levels. The game has created a hook by giving players enough opportunities to earn infinite lives for short time periods through various events. More lives, the more you play, more you earn the stars.
 
-### 1. Daily Reward Restructuring
-**Current Issue**: Daily rewards plateau in value after the first week.
+Here's where it gets tricky, these rewards get accumulated and the timer starts as soon as you receive them. So suppose you won 5 such rewards for 30mins each, your timer for infinite lives will start for 150 mins, there's no way to claim such rewards at a later time.
 
-**Proposed Solution**:
-- Implement a 28-day reward calendar with increasing value
-- Add "milestone" super rewards at days 7, 14, 21, and 28
-- Include a "catch-up" mechanic for missed days (watching ads)
-- Expected impact: +15% improvement in daily active users
+So my first hypothesis to increase engagement is that if the users get to choose when to start the 'unlimited lives' rewards, users will be able to use their rewards more effectively which will lead to more engagement in the game.
 
-### 2. Social Garden Events
-**Current Issue**: Limited social interaction between players.
+## Hypothesis 2
 
-**Proposed Solution**:
-- Create weekly collaborative garden restoration events
-- Allow players to visit friends' gardens and help with tasks
-- Implement friend leaderboards with non-disruptive competition
-- Expected impact: +20% increase in session frequency
+Another hurdle that users may face is to earn coins currently, the only way to earn coins is by completing the match-3 levels, often one is just short of a few coins which can help the players continue difficult levels with 5 extra moves.
 
-### 3. Puzzle Variety Expansion
-**Current Issue**: Core gameplay can become repetitive.
+Here's my second hypothesis: adding "Watch a video ad to earn X amount of coins" will give users the option to earn coins when they are just short and open up another stream of revenue for Playrix increasing monetization and engagement. There will be a cap on the coins the user can earn daily using this feature. The value may need to be iterated but this will encourage users to continue their game just by watching a short video.
 
-**Proposed Solution**:
-- Add 3-5 new puzzle mechanics beyond standard match-3
-- Implement special weekly challenge puzzles with unique rules
-- Create themed puzzle sets tied to seasonal events
-- Expected impact: +25% increase in session length
+## Hypothesis 3
 
-## Monetization Strategies
+Lastly, more often than not users are just stuck at a normal difficulty level and no amount of power-ups or boosters allow the user to go through, this would be a big drop off point as users would get bored playing the same level repeatedly and just leave the game.
 
-### 1. Flexible Star Package Pricing
-**Current Issue**: Fixed star packages don't accommodate different player spending habits.
+My third hypothesis is that if users can skip levels by paying x amount of coins then these users will not drop off and will try and skip such levels by paying the x amount of coins. This will not only increase engagement but will also give users extra incentive to buy coins which in turn will increase monetization.
 
-**Proposed Solution**:
-- Implement dynamic pricing based on player progression
-- Create limited-time special offers tied to player's current garden needs
-- Add "top-up" options when players are just short of completing a task
-- Expected impact: +20% increase in conversion rate
+## Final Hypothesis
 
-### 2. Ad-Based Rewards Enhancement
-**Current Issue**: Limited options for non-paying players to earn premium currency.
+My final hypothesis, adding boosters like (2x coins, +5 moves) in the store for a user to purchase using coins. Currently, these boosters are progress based and come only once a user competes in certain events and clears a certain number of levels, but if a user is stuck at a level, the user will not be able to earn such rewards.
 
-**Proposed Solution**:
-- Create an ad-supported "bonus garden" with extra rewards
-- Implement opt-in rewarded ad system for extra moves in difficult levels
-- Add daily ad-supported coin boost periods
-- Expected impact: +30% increase in ad revenue
-
-### 3. Premium Season Pass
-**Current Issue**: No long-term monetization option for engaged players.
-
-**Proposed Solution**:
-- Implement a monthly season pass ($4.99) with premium rewards
-- Include exclusive decorative items and puzzle boosters
-- Add special storylines for season pass holders
-- Expected impact: +25% increase in ARPDAU
-
-## Implementation Roadmap
-1. **Phase 1 (Month 1-2)**: Daily reward restructuring and flexible pricing
-2. **Phase 2 (Month 3-4)**: Ad-based rewards and puzzle variety expansion
-3. **Phase 3 (Month 5-6)**: Social garden events and season pass
-
-## Success Metrics
-- Increase D30 retention from 12% to 18%
-- Increase conversion rate from 2.5% to 4%
-- Increase ARPDAU from $0.15 to $0.22
-- Increase average session length from 18 minutes to 25 minutes
 
 ## Conclusion
-By implementing these engagement and monetization strategies in a phased approach, Gardenscapes can significantly improve both player retention and revenue while maintaining the casual, relaxing experience that appeals to its core audience.
+
+Overall, Gardenscapes is a fun game to play, if one could earn enough lives, one would be hooked to the game for a long time. My hypotheses may be wrong but these are some suggestions that Playrix can experiment on and get better insights to improve the user engagement and monetization of their game.
+
+### References
+
+- https://en.wikipedia.org/wiki/Gardenscapes:_New_Acres
+- https://play.google.com/store/apps/details?id=com.playrix.gardenscapes
