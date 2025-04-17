@@ -14,7 +14,8 @@ While Upgrad and most other institutions offer placement assistance, that doesn'
 
 They will also set up mentorship calls and mock interviews but you will have to apply to all jobs on your own thus started my endless cycle of applying to jobs and getting rejected. Here's a pie chart of the applications I sent:
 
-![Applications Pie Chart](https://static.wixstatic.com/media/fb73da_1718b0e4da0e40738e2120902b97347f~mv2.png/v1/fill/w_1024,h_768,al_c,q_90,enc_auto/fb73da_1718b0e4da0e40738e2120902b97347f~mv2.png)
+![Applications Pie Chart](./case-study-gardenscapes/Gardenscapes9.webp)
+
 
 I applied to a total of 188 jobs where I did not get any response for 83% of my applications. Here Upgrad's career coach helped me stay motivated and keep applying. He also asked me to keep applying for jobs and iterate my resume and profile. 
 

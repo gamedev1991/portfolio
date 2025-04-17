@@ -2,6 +2,8 @@ import React, { useState, useRef, useEffect } from 'react';
 import { Document, Page, pdfjs } from 'react-pdf';
 import 'react-pdf/dist/esm/Page/AnnotationLayer.css';
 import 'react-pdf/dist/esm/Page/TextLayer.css';
+import { ChevronLeft, ChevronRight } from 'lucide-react';
+import { buttonVariants } from '@/components/ui/button';
 
 // Use the worker from the public directory to avoid Vite/TypeScript issues
 pdfjs.GlobalWorkerOptions.workerSrc = '/pdf.worker.min.js';
@@ -48,19 +50,21 @@ const PDFCarousel: React.FC<PDFCarouselProps> = ({ pdfUrl }) => {
         <button
           onClick={goToPrevPage}
           disabled={pageNumber <= 1}
-          className="px-3 py-1 rounded bg-gray-200 dark:bg-gray-700 disabled:opacity-50"
+          className={buttonVariants({ variant: 'ghost', size: 'icon' }) + ' flex items-center justify-center' + (pageNumber <= 1 ? ' opacity-50' : '')}
+          aria-label="Previous page"
         >
-          Prev
+          <ChevronLeft className="h-5 w-5" />
         </button>
-        <span>
+        <span className="min-w-[100px] text-center">
           Page {pageNumber} of {numPages}
         </span>
         <button
           onClick={goToNextPage}
           disabled={pageNumber >= numPages}
-          className="px-3 py-1 rounded bg-gray-200 dark:bg-gray-700 disabled:opacity-50"
+          className={buttonVariants({ variant: 'ghost', size: 'icon' }) + ' flex items-center justify-center' + (pageNumber >= numPages ? ' opacity-50' : '')}
+          aria-label="Next page"
         >
-          Next
+          <ChevronRight className="h-5 w-5" />
         </button>
       </div>
       <div className="w-full flex justify-center">
