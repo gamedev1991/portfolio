@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import { Document, Page, pdfjs } from 'react-pdf';
 import 'react-pdf/dist/esm/Page/AnnotationLayer.css';
 import 'react-pdf/dist/esm/Page/TextLayer.css';
@@ -14,6 +14,20 @@ const PDFCarousel: React.FC<PDFCarouselProps> = ({ pdfUrl }) => {
   console.log('[PDFCarousel] pdfUrl:', pdfUrl);
   const [numPages, setNumPages] = useState<number>(0);
   const [pageNumber, setPageNumber] = useState<number>(1);
+  const [containerWidth, setContainerWidth] = useState<number>(900); // Default width
+  const containerRef = useRef<HTMLDivElement | null>(null);
+
+  // Responsive width hook
+  useEffect(() => {
+    function updateWidth() {
+      if (containerRef.current) {
+        setContainerWidth(containerRef.current.offsetWidth);
+      }
+    }
+    updateWidth();
+    window.addEventListener('resize', updateWidth);
+    return () => window.removeEventListener('resize', updateWidth);
+  }, []);
 
   const onDocumentLoadSuccess = ({ numPages }: { numPages: number }) => {
     console.log('[PDFCarousel] PDF loaded successfully. Number of pages:', numPages);
@@ -50,13 +64,13 @@ const PDFCarousel: React.FC<PDFCarouselProps> = ({ pdfUrl }) => {
         </button>
       </div>
       <div className="w-full flex justify-center">
-        <div className="max-w-4xl w-full flex justify-center">
+        <div ref={containerRef} className="max-w-4xl w-full flex justify-center">
           <Document 
             file={pdfUrl} 
             onLoadSuccess={onDocumentLoadSuccess} 
             onLoadError={onDocumentLoadError}
             loading={<div>Loading PDF...</div>}>
-            <Page pageNumber={pageNumber} width={900} loading={<div>Loading page...</div>} />
+            <Page pageNumber={pageNumber} width={containerWidth} loading={<div>Loading page...</div>} />
           </Document>
         </div>
       </div>
