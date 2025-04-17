@@ -82,7 +82,7 @@ export const blogPosts: BlogPost[] = [
     link: "/blog/wizard-of-oz",
     imageUrl: "/placeholder.svg",
     contentPath: "",
-    pdfPath: "/blog/wizard-of-oz.pdf"
+    pdfPath: "/blog/wizard-of-oz/wizard-of-oz.pdf"
   }
 ];
 
