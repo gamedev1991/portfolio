@@ -46,10 +46,4 @@ We will measure the success of this feature through:
 - **Good to Have**: Important but not critical for launch
 - **Nice to Have**: Desirable but can be implemented in future iterations
 
-![Wireframe](./product-requirement-document-movie-review/Wireframe.webp)
-
-
-
-
-
-
+![Wireframe](./assets/Wireframe.webp)

@@ -32,7 +32,7 @@ export const blogPosts: BlogPost[] = [
     tags: ["career", "product management", "journey", "development"],
     link: "/blog/how-i-became-a-product-manager",
     imageUrl: "/placeholder.svg",
-    contentPath: "/blog/how-i-became-a-product-manager/how-i-became-a-product-manager.md", 
+    contentPath: "/blog/how-i-became-a-product-manager.md", 
     featured: true,
   },
   {
@@ -45,7 +45,7 @@ export const blogPosts: BlogPost[] = [
     tags: ["PRD", "product documentation", "feature development", "user engagement"],
     link: "/blog/product-requirement-document-movie-review",
     imageUrl: "/placeholder.svg",
-    contentPath: "/blog/product-requirement-document-movie-review/product-requirement-document-movie-review.md", 
+    contentPath: "/blog/product-requirement-document-movie-review.md", 
   },
   {
     id: "case-study-stick-cricket-live",
@@ -57,7 +57,7 @@ export const blogPosts: BlogPost[] = [
     tags: ["game design", "monetization", "user engagement", "mobile gaming"],
     link: "/blog/case-study-stick-cricket-live", // Changed to internal link
     imageUrl: "/placeholder.svg",
-    contentPath: "/blog/case-study-stick-cricket-live/case-study-stick-cricket-live.md",
+    contentPath: "/blog/case-study-stick-cricket-live.md",
   },
   {
     id: "case-study-gardenscapes",
@@ -69,7 +69,7 @@ export const blogPosts: BlogPost[] = [
     tags: ["game design", "monetization", "mobile gaming", "casual games"],
     link: "/blog/case-study-gardenscapes", // Changed to internal link
     imageUrl: "/placeholder.svg",
-    contentPath: "/blog/case-study-gardenscapes/case-study-gardenscapes.md",
+    contentPath: "/blog/case-study-gardenscapes.md",
   },
   {
     id: "wizard-of-oz",
@@ -82,7 +82,7 @@ export const blogPosts: BlogPost[] = [
     link: "/blog/wizard-of-oz",
     imageUrl: "/placeholder.svg",
     contentPath: "",
-    pdfPath: "/blog/wizard-of-oz/wizard-of-oz.pdf"
+    pdfPath: "/blog/wizard-of-oz.pdf"
   }
 ];
 

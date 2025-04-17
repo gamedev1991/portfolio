@@ -4,11 +4,11 @@ Downloaded over a million times on Google Play, with a rating of 4.3, and been a
 
 Stick Cricket Live is a real-time 1v1 multiplayer cricket game, where each player gets 3 overs to bat, the player with the highest score at the end of the third over wins. If a game is tied it's decided by a superover. The controls are simple with just two buttons, left button, and the right button. Tapping the button in the direction of the delivery at the right time leads to the batsman playing a shot accordingly. There's a vertical bar on the left screen that shows your timing. The better the timing better the shot the batsman plays, imagine a reverse-sweep six.
 
-![Stick Cricket Live Screenshot 1](./case-study-stick-cricket-live/StickCricket1.webp)
+![Stick Cricket Live Screenshot 1](./assets/StickCricket1.webp)
 
 A player can enter a game by betting a certain amount of coins depending on the stadium the player chooses, the stadiums get unlocked with a player's trophies that are earned by winning a game. Trophies are lost when a game is lost. A player gets the double amount of coins betted and a cricket kit that has different cards, these cards are different bowlers or bats that a player can choose to have when playing a game. A player can choose the bowler according to the bat of the opponent and gets 10 seconds at the start of every over. Some bowlers are strong against a particular bat while some are weak and hence it's important to keep collecting cards to upgrade the bowlers as well as the bat. While collecting cards is important, upgrading them requires coins that a player gets after winning matches, hence the loop- play to earn coins, kits, and trophies, upgrade cards using coins and then play again to unlock the next stadium.
 
-![Stick Cricket Live Screenshot 2](./case-study-stick-cricket-live/StickCricket2.webp)
+![Stick Cricket Live Screenshot 2](./assets/StickCricket2.webp)
 
 
 The game uses the treasure chest retention strategy of Clash Royale where a player's kit takes 4 hours to open, a pro kit takes 8, and an elite extra kit bag takes 24 hours to open.
@@ -29,7 +29,7 @@ There are 2 simple boosters that can be implemented to increase engagement in th
 
 The KPI for the above boosters would be the number of times the boosters are bought.
 
-![Stick Cricket Live Screenshot 3](./case-study-stick-cricket-live/StickCricket3.webp)
+![Stick Cricket Live Screenshot 3](./assets/StickCricket3.webp)
 
 ## Strategy 2: Not Enough Coins
 
@@ -38,7 +38,7 @@ The not enough coins pop up asks users to go to the store, instead of that a bet
 - Number of drop-offs when a user has a fewer amount of coins
 - Number of users that opt for buying the deficit amount of coins
 
-![Stick Cricket Live Screenshot 4](./case-study-stick-cricket-live/StickCricket4.webp)
+![Stick Cricket Live Screenshot 4](./assets/StickCricket4.webp)
 
 ## Strategy 3: Subscription (Pass)
 
@@ -48,7 +48,7 @@ PUBG's revenue got boosted by 365% after the introduction of Royale Pass and hen
 
 The game can implement a season pass, where the users get additional cards and coins on their rewards, the runs kit can actually be changed to a series of rewards based on the number of runs scored in a season. The series of rewards can vary depending upon whether a user has subscribed for the pass or not. Both Clash Royale and Tennis Clash have executed the subscription model very well. Stick Cricket can use the same model and increase monetization in their game.
 
-![Stick Cricket Live Screenshot 5](./case-study-stick-cricket-live/StickCricket5.webp)
+![Stick Cricket Live Screenshot 5](./assets/StickCricket5.webp)
 
 ## Conclusion
 

@@ -11,7 +11,7 @@ export default defineConfig(({ mode }) => ({
   plugins: [
     react(),
   ],
-  base: './',
+  base: '/',
   build: {
     outDir: 'dist',
     assetsDir: 'assets',

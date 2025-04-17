@@ -44,6 +44,41 @@ const PDFCarousel: React.FC<PDFCarouselProps> = ({ pdfUrl }) => {
   const goToPrevPage = () => setPageNumber((prev) => (prev > 1 ? prev - 1 : prev));
   const goToNextPage = () => setPageNumber((prev) => (prev < numPages ? prev + 1 : prev));
 
+  // Custom loader with background matching the site (dark or light)
+  const pageLoader = (
+    <div
+      style={{
+        width: containerWidth,
+        height: '600px', // fallback height, can be tweaked or made dynamic
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        background: 'var(--background, #18181b)', // fallback to dark, can be customized
+        color: '#888',
+        borderRadius: '8px',
+      }}
+    >
+      Loading page...
+    </div>
+  );
+
+  const documentLoader = (
+    <div
+      style={{
+        width: '100%',
+        height: '600px',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        background: 'var(--background, #18181b)',
+        color: '#888',
+        borderRadius: '8px',
+      }}
+    >
+      Loading PDF...
+    </div>
+  );
+
   return (
     <div className="flex flex-col items-center w-full">
       <div className="flex items-center gap-4 mb-2">
@@ -73,8 +108,13 @@ const PDFCarousel: React.FC<PDFCarouselProps> = ({ pdfUrl }) => {
             file={pdfUrl} 
             onLoadSuccess={onDocumentLoadSuccess} 
             onLoadError={onDocumentLoadError}
-            loading={<div>Loading PDF...</div>}>
-            <Page pageNumber={pageNumber} width={containerWidth} loading={<div>Loading page...</div>} />
+            loading={documentLoader}
+          >
+            <Page 
+              pageNumber={pageNumber} 
+              width={containerWidth} 
+              loading={pageLoader} 
+            />
           </Document>
         </div>
       </div>
