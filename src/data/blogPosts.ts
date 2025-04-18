@@ -23,6 +23,45 @@ const formatDate = (dateString: string): string => {
 
 export const blogPosts: BlogPost[] = [
   {
+    id: "wizard-of-oz",
+    title: "Wizard of Oz",
+    summary: "Case Study: Increase revenue of Zynga's game Wizard Of Oz",
+    publishDate: "2025-03-09",
+    dateFormatted: formatDate("2025-03-09"),
+    category: "case-study",
+    tags: ["game design","product management", "monetization", "zynga", "pdf"],
+    link: "/blog/wizard-of-oz",
+    imageUrl: "/placeholder.svg",
+    contentPath: "",
+    pdfPath: "/blog/wizard-of-oz.pdf"
+  },
+  {
+    id: "match-makers-case-study",
+    title: "Match Makers Case Study",
+    summary: "Case Study: explore strategies to increase the IAP revenue of Match Masters by at least 15%",
+    publishDate: "2023-04-28",
+    dateFormatted: formatDate("2023-04-28"),
+    category: "case-study",
+    tags: ["game design","product management", "monetization", "pdf"],
+    link: "/blog/match-makers-case-study",
+    imageUrl: "/placeholder.svg",
+    contentPath: "",
+    pdfPath: "/blog/match-makers-case-study.pdf"
+  },
+  {
+    id: "rodeo-stampede-case-study",
+    title: "Rodeo Stampede Case Study",
+    summary: "Case Study: Optimise Ad Monetization for Rodeo Stampede",
+    publishDate: "2024-01-15",
+    dateFormatted: formatDate("2024-01-15"),
+    category: "case-study",
+    tags: ["game design","product management", "monetization", "pdf"],
+    link: "/blog/rodeo-stampede-case-study",
+    imageUrl: "/placeholder.svg",
+    contentPath: "",
+    pdfPath: "/blog/rodeo-stampede-case-study.pdf"
+  },
+  {
     id: "how-i-became-a-product-manager",
     title: "How I Became a Product Manager",
     summary: "Chronicles the journey from a Unity developer to a Product Manager, highlighting challenges and strategies.",
@@ -70,19 +109,6 @@ export const blogPosts: BlogPost[] = [
     link: "/blog/case-study-gardenscapes", // Changed to internal link
     imageUrl: "/placeholder.svg",
     contentPath: "/blog/case-study-gardenscapes.md",
-  },
-  {
-    id: "wizard-of-oz",
-    title: "Wizard of Oz",
-    summary: "Case Study: Increase revenue of Zynga's game Wizard Of Oz",
-    publishDate: "2024-04-17",
-    dateFormatted: formatDate("2024-04-17"),
-    category: "case-study",
-    tags: ["game design", "assignment", "zynga", "pdf"],
-    link: "/blog/wizard-of-oz",
-    imageUrl: "/placeholder.svg",
-    contentPath: "",
-    pdfPath: "/blog/wizard-of-oz.pdf"
   }
 ];
 

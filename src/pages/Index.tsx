@@ -1,4 +1,3 @@
-
 import Layout from '../components/Layout';
 import Hero from '../components/Hero';
 import About from '../components/About';
@@ -6,7 +5,7 @@ import Experience from '../components/Experience';
 import Projects from '../components/Projects';
 import Skills from '../components/Skills';
 import Contact from '../components/Contact';
-import Blog from '../components/Blog';
+// import Blog from '../components/Blog';
 import { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 
@@ -47,9 +46,9 @@ const Index = () => {
       <div id="skills">
         <Skills />
       </div>
-      <div id="blog">
+      {/* <div id="blog">
         <Blog />
-      </div>
+      </div> */}
       <div id="contact">
         <Contact />
       </div>
