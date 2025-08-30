@@ -31,5 +31,18 @@ export const vibeCodingProjects: VibeProject[] = [
     ],
     link: "https://mathtutoronline.in/",
     thumbnail: "/Images/math-tutor-thumb.jpg" // Add image to public/images/
+  },
+  {
+    title: "RMG Gamified",
+    description: "RMG Gamified is a gamified version of an RMG game, which is a game that allows users to play fantasy sports",
+    features: [
+      "Gamified Fantasy Sports",
+      "Daily Missions",
+      "Streaks",
+      "Prototype",
+      "Vibe Coded"
+    ],
+    link: "https://tint-claim-88975669.figma.site/",
+    thumbnail: "/Images/rmg-thumbnail.jpg" // Add image to public/images/
   }
 ];
