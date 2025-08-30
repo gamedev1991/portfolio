@@ -23,6 +23,32 @@ const formatDate = (dateString: string): string => {
 
 export const blogPosts: BlogPost[] = [
   {
+    id: "real-money-gaming",
+    title: "Real Money Gaming",
+    summary: "Case Study: Turn a curious first-time user into a loyal daily player",
+    publishDate: "2025-03-09",
+    dateFormatted: formatDate("2025-03-09"),
+    category: "case-study",
+    tags: ["product strategy","product management", "monetization", "supergaming"],
+    link: "/blog/real-money-gaming",
+    imageUrl: "/placeholder.svg",
+    contentPath: "",
+    pdfPath: "/blog/rmg-case-study.pdf"
+  },
+  {
+    id: "super-gaming",
+    title: "Super Gaming",
+    summary: "Case Study: Solve for Super Gaming games",
+    publishDate: "2025-03-09",
+    dateFormatted: formatDate("2025-03-09"),
+    category: "case-study",
+    tags: ["product strategy","product management", "monetization", "supergaming"],
+    link: "/blog/super-gaming",
+    imageUrl: "/placeholder.svg",
+    contentPath: "",
+    pdfPath: "/blog/super-gaming-case-study.pdf"
+  },
+  {
     id: "wizard-of-oz",
     title: "Wizard of Oz",
     summary: "Case Study: Increase revenue of Zynga's game Wizard Of Oz",
