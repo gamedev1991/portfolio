@@ -1,0 +1,10 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(find /c/Users/RAHUL/Desktop/Portfolio -type d -not -path */.git*)",
+      "Bash(npm outdated:*)",
+      "Bash(npm install:*)",
+      "Bash(npm run:*)"
+    ]
+  }
+}
