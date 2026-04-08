@@ -1,5 +1,6 @@
 
 import { useState } from 'react';
+import emailjs from '@emailjs/browser';
 import Card from './common/Card';
 import Button from './common/Button';
 import AnimatedText from './common/AnimatedText';
@@ -23,16 +24,28 @@ const Contact = () => {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
-    
-    // Simulate form submission
-    setTimeout(() => {
+
+    emailjs.send(
+      import.meta.env.VITE_EMAILJS_SERVICE_ID,
+      import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
+      {
+        from_name: formData.name,
+        from_email: formData.email,
+        message: formData.message,
+      },
+      import.meta.env.VITE_EMAILJS_PUBLIC_KEY
+    )
+    .then(() => {
       setIsSubmitting(false);
       setSubmitStatus('success');
       setFormData({ name: '', email: '', message: '' });
-      
-      // Reset status after 3 seconds
       setTimeout(() => setSubmitStatus('idle'), 3000);
-    }, 1500);
+    })
+    .catch(() => {
+      setIsSubmitting(false);
+      setSubmitStatus('error');
+      setTimeout(() => setSubmitStatus('idle'), 3000);
+    });
   };
 
   return (
