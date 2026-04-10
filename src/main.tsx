@@ -3,16 +3,16 @@ import { StrictMode } from 'react'
 import App from './App.tsx'
 import './index.css'
 
-// Register service worker for offline capabilities
+// Unregister stale service workers, then register fresh one
 if ('serviceWorker' in navigator && import.meta.env.PROD) {
   window.addEventListener('load', () => {
-    navigator.serviceWorker.register('/service-worker.js')
-      .then(registration => {
-        console.log('ServiceWorker registration successful with scope: ', registration.scope);
-      })
-      .catch(error => {
-        console.log('ServiceWorker registration failed: ', error);
+    navigator.serviceWorker.getRegistrations().then(registrations => {
+      Promise.all(registrations.map(r => r.unregister())).then(() => {
+        navigator.serviceWorker.register('/service-worker.js')
+          .then(() => {})
+          .catch(() => {});
       });
+    });
   });
 }
 

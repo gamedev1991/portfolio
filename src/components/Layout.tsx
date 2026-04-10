@@ -23,7 +23,7 @@ const Layout = ({ children }: LayoutProps) => {
             </div>
             <div className="hidden md:flex items-center space-x-6">
               <a 
-                href="mailto:rahulohri2007@email.com" 
+                href="mailto:rahulohri2007@gmail.com" 
                 className="text-white/60 hover:text-cyan-400 transition-colors text-sm"
               >
                 Email

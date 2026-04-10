@@ -23,17 +23,24 @@ const Contact = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+
+    const serviceId = import.meta.env.VITE_EMAILJS_SERVICE_ID;
+    const templateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
+    const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
+
+    if (!serviceId || !templateId || !publicKey) return;
+
     setIsSubmitting(true);
 
     emailjs.send(
-      import.meta.env.VITE_EMAILJS_SERVICE_ID,
-      import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
+      serviceId,
+      templateId,
       {
         from_name: formData.name,
         from_email: formData.email,
         message: formData.message,
       },
-      import.meta.env.VITE_EMAILJS_PUBLIC_KEY
+      publicKey
     )
     .then(() => {
       setIsSubmitting(false);
@@ -150,7 +157,7 @@ const Contact = () => {
               
               <div className="space-y-4">
                 <a 
-                  href="mailto:rahulohri2007@email.com" 
+                  href="mailto:rahulohri2007@gmail.com" 
                   className="flex items-center space-x-3 text-white/80 hover:text-cyan-400 transition-colors group"
                 >
                   <div className="w-10 h-10 rounded-full flex items-center justify-center border border-white/20 group-hover:border-cyan-500/50 transition-colors">

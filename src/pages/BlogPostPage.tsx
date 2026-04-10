@@ -9,8 +9,6 @@ const BlogPostPage = () => {
     // Check if we need to handle a redirect from an HTML file
     const redirectPath = sessionStorage.getItem('redirectTo');
     if (redirectPath) {
-      console.log('Handling redirect to:', redirectPath);
-      // Clear the redirect after handling it
       sessionStorage.removeItem('redirectTo');
     }
     

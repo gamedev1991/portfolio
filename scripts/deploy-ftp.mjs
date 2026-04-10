@@ -30,8 +30,7 @@ try {
 
   console.log('Connected to FTP server');
 
-  // Upload dist/ to public_html on Hostinger
-  await client.uploadFromDir('dist', 'public_html');
+  await client.uploadFromDir('dist', '/domains/rahulohri.com/public_html');
 
   console.log('Deploy complete!');
 } catch (err) {

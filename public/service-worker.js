@@ -1,39 +1,14 @@
 // Service Worker for Portfolio
-const CACHE_NAME = 'portfolio-cache-v1';
-const ASSETS_CACHE_NAME = 'portfolio-assets-cache-v1';
+const CACHE_NAME = 'portfolio-cache-v3';
+const ASSETS_CACHE_NAME = 'portfolio-assets-cache-v3';
 
-// Define different cache strategies for different types of resources
-const urlsToCache = [
-  '/',
-  '/index.html',
-  '/manifest.json'
-];
+// Never cache index.html or navigation — only cache hashed assets
+const assetsToCache = [];
 
-const assetsToCache = [
-  '/assets/index-h7Xa29CT.css',
-  '/assets/index-DBDLGZwl.js',
-  '/assets/vendor-B3U6yQ0Z.js'
-];
-
-// Security-focused installation
 self.addEventListener('install', event => {
   event.waitUntil(
-    Promise.all([
-      // Cache core app shell
-      caches.open(CACHE_NAME)
-        .then(cache => {
-          console.log('Opened core cache');
-          return cache.addAll(urlsToCache);
-        }),
-      // Cache assets separately with different strategy
-      caches.open(ASSETS_CACHE_NAME)
-        .then(cache => {
-          console.log('Opened assets cache');
-          return cache.addAll(assetsToCache);
-        })
-    ])
+    caches.open(ASSETS_CACHE_NAME).then(cache => cache.addAll(assetsToCache))
   );
-  // Force immediate activation
   self.skipWaiting();
 });
 
@@ -108,22 +83,11 @@ self.addEventListener('fetch', event => {
   );
 });
 
-// Activate event - clean up old caches securely
+// Activate — wipe ALL old caches so stale JS never gets served
 self.addEventListener('activate', event => {
-  const cacheWhitelist = [CACHE_NAME, ASSETS_CACHE_NAME];
-  
   event.waitUntil(
-    caches.keys().then(cacheNames => {
-      return Promise.all(
-        cacheNames.map(cacheName => {
-          if (cacheWhitelist.indexOf(cacheName) === -1) {
-            return caches.delete(cacheName);
-          }
-        })
-      );
-    }).then(() => {
-      // Claim clients so the service worker is in control immediately
-      return self.clients.claim();
-    })
+    caches.keys()
+      .then(cacheNames => Promise.all(cacheNames.map(name => caches.delete(name))))
+      .then(() => self.clients.claim())
   );
 });

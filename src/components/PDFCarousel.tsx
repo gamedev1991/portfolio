@@ -13,7 +13,6 @@ interface PDFCarouselProps {
 }
 
 const PDFCarousel: React.FC<PDFCarouselProps> = ({ pdfUrl }) => {
-  console.log('[PDFCarousel] pdfUrl:', pdfUrl);
   const [numPages, setNumPages] = useState<number>(0);
   const [pageNumber, setPageNumber] = useState<number>(1);
   const [containerWidth, setContainerWidth] = useState<number>(900); // Default width
@@ -32,14 +31,11 @@ const PDFCarousel: React.FC<PDFCarouselProps> = ({ pdfUrl }) => {
   }, []);
 
   const onDocumentLoadSuccess = ({ numPages }: { numPages: number }) => {
-    console.log('[PDFCarousel] PDF loaded successfully. Number of pages:', numPages);
     setNumPages(numPages);
     setPageNumber(1);
   };
 
-  const onDocumentLoadError = (error: any) => {
-    console.error('[PDFCarousel] Failed to load PDF:', error);
-  };
+  const onDocumentLoadError = (_error: unknown) => {};
 
   const goToPrevPage = () => setPageNumber((prev) => (prev > 1 ? prev - 1 : prev));
   const goToNextPage = () => setPageNumber((prev) => (prev < numPages ? prev + 1 : prev));

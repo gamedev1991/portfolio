@@ -16,21 +16,7 @@ export default defineConfig(({ mode }) => ({
     outDir: 'dist',
     assetsDir: 'assets',
     sourcemap: mode === 'development',
-    rollupOptions: {
-      output: {
-        manualChunks: {
-          vendor: ['react', 'react-dom', 'react-router-dom'],
-          ui: [
-            '@radix-ui/react-navigation-menu',
-            '@radix-ui/react-dialog',
-            '@radix-ui/react-dropdown-menu',
-            'lucide-react',
-            'next-themes'
-          ],
-          markdown: ['react-markdown']
-        },
-      },
-    },
+    rollupOptions: {},
     // Optimize chunk size
     chunkSizeWarningLimit: 1000,
     // Minify output for production

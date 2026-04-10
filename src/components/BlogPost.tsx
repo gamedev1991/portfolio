@@ -29,7 +29,6 @@ const BlogPost = () => {
     // Fetch the content from the markdown file ONLY if not a PDF post and contentPath is set
     if (currentPost && !currentPost.pdfPath && currentPost.contentPath) {
       setLoading(true);
-      console.log('Fetching content from:', currentPost.contentPath);
       
       // Normalize the path - ensure it starts with a slash for consistency
       const normalizedPath = currentPost.contentPath.startsWith('/') 
@@ -41,7 +40,6 @@ const BlogPost = () => {
       
       fetch(normalizedPath + cacheBuster)
         .then(response => {
-          console.log('Response status:', response.status);
           if (!response.ok) {
             throw new Error(`Failed to fetch blog content: ${response.status}`);
           }
@@ -61,8 +59,7 @@ const BlogPost = () => {
           setContent(processedContent);
           setLoading(false);
         })
-        .catch(error => {
-          console.error('Error fetching blog content:', error);
+        .catch(() => {
           setLoading(false);
         });
     }
