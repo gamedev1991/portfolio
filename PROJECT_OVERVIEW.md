@@ -2,7 +2,7 @@
 
 > **Owner:** Rahul Ohri
 > **Live Site:** https://rahulohri.com
-> **Last Analyzed:** April 1, 2026
+> **Last Analyzed:** April 10, 2026
 
 ---
 
@@ -17,15 +17,15 @@ A personal portfolio website for **Rahul Ohri**, a Product Manager and Game Deve
 | Layer | Technology |
 |---|---|
 | Framework | React 18.3.1 + TypeScript 5.5.3 |
-| Build Tool | Vite 6.2.5 (SWC transpiler) |
+| Build Tool | Vite 6.4.2 (SWC transpiler) |
 | Styling | Tailwind CSS 3.4.11 + shadcn/ui (50+ components) |
-| Routing | React Router v6.26.2 |
-| Server State | TanStack React Query v5.56.2 |
-| Content | react-markdown + react-pdf |
+| Routing | React Router v6.30.3 |
+| Server State | TanStack React Query v5.96.1 |
+| Content | react-markdown + react-pdf + pdfjs-dist |
 | Icons | Lucide React |
-| Charting | Recharts 2.12.7 |
+| Charting | Recharts 2.15.4 |
 | Notifications | Sonner |
-| Deployment | GitHub Pages (gh-pages) + PowerShell FTP scripts |
+| Deployment | Hostinger via FTP (`npm run deploy`) + GitHub Pages fallback |
 
 ---
 
@@ -145,7 +145,7 @@ Terminal-styled interface with 4 tabs and 23+ skills:
 
 ## Blog
 
-**8 total posts** across two content types:
+**9 total posts** across two content types:
 
 ### Markdown Articles
 | Title | Date | Category |
@@ -203,7 +203,8 @@ Custom animations: `pulse-glow`, `text-glow`, `neon-pulse`, `float`, `grid-backg
 ```bash
 npm run dev        # Start dev server (localhost:8080)
 npm run build      # TypeScript check + production build → dist/
-npm run deploy     # Push dist/ to GitHub Pages
+npm run deploy     # Build + FTP upload to rahulohri.com (Hostinger)
+npm run deploy:gh  # Deploy to GitHub Pages
 npm run lint       # ESLint checks
 npm run preview    # Preview production build locally
 ```
@@ -223,4 +224,5 @@ npm run preview    # Preview production build locally
 | `vite.config.ts` | Build config & code splitting |
 | `public/blog/*.md` | Markdown blog content |
 | `public/blog/*.pdf` | PDF case study content |
-| `deploy.ps1` | Deployment automation |
+| `scripts/deploy-ftp.mjs` | FTP deployment to Hostinger |
+| `deploy.ps1` / `upload.ps1` | PowerShell deployment helpers |

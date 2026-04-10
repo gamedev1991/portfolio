@@ -1,69 +1,80 @@
-# Welcome to your Lovable project
+# Rahul Ohri — Portfolio
 
-## Project info
+**Live site:** https://rahulohri.com
 
-**URL**: https://rahulohri.com
+Personal portfolio for Rahul Ohri — Product Manager and Game Developer with 9+ years of experience shipping mobile games and consumer products.
 
-## How can I edit this code?
+---
 
-There are several ways of editing your application.
+## Tech Stack
 
-**Use Lovable**
+- **React 18** + **TypeScript** — SPA with React Router v6
+- **Vite 6** (SWC) — build tool with manual code splitting
+- **Tailwind CSS 3** + **shadcn/ui** — cyberpunk design system
+- **EmailJS** — contact form email delivery
+- **TanStack React Query** — server state and caching
+- **react-markdown** + **react-pdf** — blog content rendering
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/c67b209e-5193-44ea-bcba-cbef77cc04d0) and start prompting.
+---
 
-Changes made via Lovable will be committed automatically to this repo.
+## Local Development
 
-**Use your preferred IDE**
-
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
-
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
-
-Follow these steps:
+Requirements: Node.js 18+ and npm.
 
 ```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+# Install dependencies
+npm install
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
+# Start dev server (localhost:8080)
 npm run dev
+
+# Production build → dist/
+npm run build
+
+# Preview production build locally
+npm run preview
+
+# Lint
+npm run lint
 ```
 
-**Edit a file directly in GitHub**
+---
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+## Deployment
 
-**Use GitHub Codespaces**
+The site deploys to Hostinger via FTP:
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+```sh
+# Build + deploy to rahulohri.com via FTP
+npm run deploy
+```
 
-## What technologies are used for this project?
+Credentials are stored in `.env` (gitignored). See `scripts/deploy-ftp.mjs` for the upload logic.
 
-This project is built with .
+GitHub Pages deployment is also available:
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+```sh
+npm run deploy:gh
+```
 
-## How can I deploy this project?
+---
 
-Simply open [Lovable](https://lovable.dev/projects/c67b209e-5193-44ea-bcba-cbef77cc04d0) and click on Share -> Publish.
+## Project Structure
 
-## I want to use a custom domain - is that possible?
+```
+src/
+  components/     # Page sections + common UI primitives
+  data/           # Blog post metadata, vibe coding projects
+  pages/          # Route-level components
+  hooks/          # useIsMobile, useToast
+  lib/            # Utility functions (cn)
+public/
+  blog/           # Markdown posts + PDF case studies + images
+  Images/         # Project and profile thumbnails
+  Videos/         # Project demo videos
+scripts/
+  deploy-ftp.mjs  # FTP deployment
+```
 
-We don't support custom domains (yet). If you want to deploy your project under your own domain then we recommend using Netlify. Visit our docs for more details: [Custom domains](https://docs.lovable.dev/tips-tricks/custom-domain/)
+For full architecture details see `PROJECT_OVERVIEW.md`.  
+For PM recruiter evaluation and improvement tasks see `PM_RECRUITER_ACTION_PLAN.md`.

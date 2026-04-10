@@ -35,3 +35,6 @@ deploy.ps1
 .env.local
 .env.*.local
 .claude/
+
+# Local planning docs
+PM_RECRUITER_ACTION_PLAN.md

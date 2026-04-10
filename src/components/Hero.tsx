@@ -2,7 +2,7 @@
 import { useState, useEffect } from 'react';
 import AnimatedText from './common/AnimatedText';
 import Button from './common/Button';
-import { ArrowDown, Gamepad2 } from 'lucide-react';
+import { ArrowDown, Download, Gamepad2 } from 'lucide-react';
 
 const Hero = () => {
   const [loading, setLoading] = useState(true);
@@ -99,17 +99,30 @@ const Hero = () => {
             </p>
             
             <div className="flex flex-col sm:flex-row justify-center items-center space-y-4 sm:space-y-0 sm:space-x-4 mt-8">
-              <Button 
-                variant="primary" 
+              <Button
+                variant="primary"
                 size="lg"
                 href="#projects"
                 className="w-full sm:w-auto"
               >
                 View Projects
               </Button>
-              
-              <Button 
-                variant="outlined" 
+
+              <Button
+                variant="secondary"
+                size="lg"
+                href="/RahulOhri.pdf"
+                download="Rahul_Ohri_PM_Resume.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                icon={<Download size={16} />}
+                className="w-full sm:w-auto"
+              >
+                Resume
+              </Button>
+
+              <Button
+                variant="outlined"
                 size="lg"
                 href="#contact"
                 className="w-full sm:w-auto"

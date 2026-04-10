@@ -12,6 +12,9 @@ interface ButtonProps {
   type?: 'button' | 'submit' | 'reset';
   icon?: ReactNode;
   href?: string;
+  download?: string;
+  target?: string;
+  rel?: string;
 }
 
 const Button = ({
@@ -24,6 +27,9 @@ const Button = ({
   type = 'button',
   icon,
   href,
+  download,
+  target,
+  rel,
 }: ButtonProps) => {
   const baseStyles = "relative font-orbitron uppercase tracking-wider inline-flex items-center justify-center transition-all duration-300 ease-in-out focus:outline-none";
   
@@ -43,7 +49,7 @@ const Button = ({
   const disabledStyles = disabled ? "opacity-50 cursor-not-allowed" : "cursor-pointer";
 
   const Component = href ? 'a' : 'button';
-  const hrefProps = href ? { href } : {};
+  const hrefProps = href ? { href, ...(download && { download }), ...(target && { target }), ...(rel && { rel }) } : {};
 
   return (
     <Component
