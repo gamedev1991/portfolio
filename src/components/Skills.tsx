@@ -18,29 +18,41 @@ interface SkillCategory {
 }
 
 const certifications: Certification[] = [
-  { 
-    title: "Certified Product Manager", 
-    issuer: "Product School", 
-    date: "2022",
+  {
+    title: "Product Launches Micro-Certification (PRLC)™",
+    issuer: "Product School",
+    date: "",
+    icon: <Award size={16} />
+  },
+  {
+    title: "Product Roadmapping Micro-Certification (PRC)™",
+    issuer: "Product School",
+    date: "",
+    icon: <PenTool size={16} />
+  },
+  {
+    title: "Product Strategy Micro-Certification (PSC)™",
+    issuer: "Product School",
+    date: "",
     icon: <Shield size={16} />
   },
-  { 
-    title: "Game Design Fundamentals", 
-    issuer: "Unity Learning", 
-    date: "2020",
-    icon: <Cpu size={16} />
-  },
-  { 
-    title: "Data-Driven Product Strategy", 
-    issuer: "Product Analytics Academy", 
-    date: "2021",
+  {
+    title: "Product-Led Growth Micro-Certification (PLGC)™",
+    issuer: "Product School",
+    date: "",
     icon: <LineChart size={16} />
   },
-  { 
-    title: "Agile Product Management", 
-    issuer: "Scrum Alliance", 
-    date: "2021",
-    icon: <Award size={16} />
+  {
+    title: "Product Analytics Micro-Certification (PAC)™",
+    issuer: "Product School",
+    date: "",
+    icon: <Cpu size={16} />
+  },
+  {
+    title: "Artificial Intelligence Micro-Certification (AIC)™",
+    issuer: "Product School",
+    date: "",
+    icon: <Code size={16} />
   },
 ];
 
@@ -185,16 +197,15 @@ const Skills = () => {
         </div>
         
         {/* Certifications */}
-        {/* 
         <div className="mt-16">
           <h3 className="text-2xl font-bold mb-8 text-center">
             <AnimatedText variant="glow">Certifications</AnimatedText>
           </h3>
-          
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {certifications.map((cert, index) => (
-              <Card 
-                key={index} 
+              <Card
+                key={index}
                 variant="hover"
                 className="p-5 border border-white/10 transition-all duration-300 hover:-translate-y-1"
               >
@@ -204,7 +215,6 @@ const Skills = () => {
                       {cert.icon}
                     </div>
                     <div className="ml-3">
-                      <span className="block text-xs text-white/50">{cert.date}</span>
                       <span className="block text-xs text-cyan-400">{cert.issuer}</span>
                     </div>
                   </div>
@@ -214,7 +224,6 @@ const Skills = () => {
             ))}
           </div>
         </div>
-        */}
       </div>
     </section>
   );

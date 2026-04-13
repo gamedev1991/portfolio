@@ -86,15 +86,14 @@ const Hero = () => {
                   variant="reveal" 
                   delay={600}
                 >
-                  Building Engaging Games & Products with Data-Driven Innovation
+                  Live Ops, Monetisation & Growth — PM Who Has Shipped on iOS and Android
                 </AnimatedText>
               </span>
             </h1>
             
             <p className="text-white/70 md:text-lg mb-8 max-w-xl mx-auto">
               <AnimatedText variant="reveal" delay={900}>
-                Over 6 years of experience in game development and 3+ years in product 
-                management, specializing in B2C, F2P, Web3, and mobile games.
+                Product Manager with a dev background. I've shipped F2P titles, run live ops seasons, and made monetisation calls that moved real numbers.
               </AnimatedText>
             </p>
             

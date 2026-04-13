@@ -71,21 +71,15 @@ const About = () => {
           <div className="order-2 lg:order-1">
             <div className="space-y-6">
               <p className="text-white/80 leading-relaxed">
-                I'm a passionate <span className="text-cyan-400 font-medium">Product Manager and Game Developer</span> with
-                over 6 years of experience in creating engaging gaming experiences and 3+ years in product management.
+                I've spent <span className="text-cyan-400 font-medium">over a decade in games</span> — writing the code, designing the systems, and owning the roadmap. I bring technical depth to every product decision.
               </p>
               
               <p className="text-white/80 leading-relaxed">
-                My journey has taken me from building top-rated mobile games to managing complex
-                product ecosystems across <span className="text-cyan-400 font-medium">B2C, F2P, Web3, and mobile platforms</span>.
-                I specialize in transforming creative concepts into polished products through strategic
-                planning and data-driven decision-making.
+                My path has taken me from building top-rated mobile games to running live ops seasons and owning monetisation systems across <span className="text-cyan-400 font-medium">F2P, Web3, and mobile platforms</span>. I specialise in making the call — on features, on risks, and on what not to ship.
               </p>
-              
+
               <p className="text-white/80 leading-relaxed">
-                Throughout my career at companies like <span className="text-cyan-400 font-medium">Blkbox AI, AURA, FanClash, and Nukebox Studios</span>,
-                I've championed user-centric design principles while balancing business goals, resulting in
-                products that resonate with users and drive measurable results.
+                I've shipped at <span className="text-cyan-400 font-medium">JetSynthesys, Blkbox AI, FanClash, AURA, and Nukebox Studios</span> — including a Google Play Game of the Year title — and I've learned that the best product decisions come from being close to both the data and the player.
               </p>
             </div>
           </div>
