@@ -14,9 +14,22 @@ interface ExperienceItem {
 
 const experiences: ExperienceItem[] = [
   {
+    company: "JetSynthesys",
+    role: "Product Manager",
+    period: "09/2025 - Present",
+    description: "Owning live operations for a mobile game title at a game development services company — managing seasonal deployments, monetisation systems, and cross-functional defect resolution on iOS and Android.",
+    achievements: [
+      "Owned end-to-end live operations for two consecutive seasons — managing 10 production deployments, 6 LTBs, 4 Trading Posts, and full Legendary, Mythic, Rider, and Atlas branch suites on iOS and Android.",
+      "Identified and mitigated a $20,000 revenue risk through impact analysis of Tower Instance configurations during a live Fortification event prize programme.",
+      "Resolved a monetisation-critical gacha defect (missing Festive Dragon shards from Draconic Chests) affecting chest revenue — root cause identified and deployed to production without escalation.",
+      "Designed an automated CSV batch script delivering a 45× reduction in manual processing time (15 min → 20 sec); adopted team-wide.",
+      "Conducted structured impact analysis on a proposed XP Booster feature — identified unmitigable progression risks and recommended against implementation, preventing a disruptive release from entering the development pipeline."
+    ]
+  },
+  {
     company: "Blkbox AI",
     role: "Product Manager",
-    period: "2023 - Present",
+    period: "2023 - 04/2024",
     description: "Leading product development for a hybrid casual game, focusing on innovative gameplay mechanics and user experiences.",
     achievements: [
       "Launched Gate Runner Mobile Game  within 5 months, achieving 10,000 downloads post-launch.",
