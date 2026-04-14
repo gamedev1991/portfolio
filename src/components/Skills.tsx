@@ -197,7 +197,7 @@ const Skills = () => {
         </div>
         
         {/* Certifications */}
-        <div className="mt-16">
+        <div id="certifications" className="mt-16">
           <h3 className="text-2xl font-bold mb-8 text-center">
             <AnimatedText variant="glow">Certifications</AnimatedText>
           </h3>
