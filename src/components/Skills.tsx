@@ -62,8 +62,10 @@ const skillCategories: SkillCategory[] = [
     icon: <PenTool size={20} />,
     skills: [
       "Product Roadmapping",
-      "User Story Mapping",
+      "Live Ops Management",
+      "F2P Monetization",
       "A/B Testing",
+      "User Research",
       "Stakeholder Management",
       "Product Analytics",
       "JIRA & Confluence",
@@ -76,7 +78,6 @@ const skillCategories: SkillCategory[] = [
     skills: [
       "Game Design Principles",
       "Level Design",
-      "Unity Engine",
       "Mobile Game Optimization",
       "Gameplay Mechanics",
       "Monetization Strategy"
@@ -86,11 +87,11 @@ const skillCategories: SkillCategory[] = [
     name: "Technical Skills",
     icon: <Code size={20} />,
     skills: [
-      "C# Programming",
       "Unity Engine",
+      "C# Programming",
       "SQL Databases",
       "Version Control (Git)",
-      "Vibe Coding using AI/ML",
+      "AI/LLM Tools",
       "Web3 & Blockchain"
     ]
   },
@@ -98,7 +99,7 @@ const skillCategories: SkillCategory[] = [
     name: "Analytics & Strategy",
     icon: <LineChart size={20} />,
     skills: [
-      "Business Intelligence",
+      "KPI / OKR Definition",
       "User Acquisition Metrics",
       "Retention Analysis",
       "Funnel Optimization",
