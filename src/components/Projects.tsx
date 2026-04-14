@@ -2,12 +2,13 @@ import { useState } from 'react';
 import Card from './common/Card';
 import Button from './common/Button';
 import AnimatedText from './common/AnimatedText';
-import { Video, X } from 'lucide-react';
+import { Video, X, TrendingUp } from 'lucide-react';
 
 interface Project {
   title: string;
   company: string;
   description: string;
+  metric: string;
   image: string;
   technologies: string[];
   playStoreLink?: string;
@@ -19,6 +20,7 @@ const projects: Project[] = [
     title: "Cosmo Sprint",
     company: "Blkbox AI",
     description: "A hybrid casual mobile game featuring procedurally generated levels and adaptive difficulty based on player behavior.",
+    metric: "10K downloads · D1 retention 10% → 18%",
     image: "/Images/CosmoSprint-Thumbnail.png",
     technologies: ["Unity", "AI", "Procedural Generation", "Mobile"],
     videoUrl: "/Videos/CosmoSprint.mp4"
@@ -27,6 +29,7 @@ const projects: Project[] = [
     title: "FanClash",
     company: "FanClash",
     description: "A fantasy esports platform allowing users to create teams of professional esports players and compete based on performance.",
+    metric: "Fill rate ↑20% · Conversion ↑5%",
     image: "/Images/FanClash-Thumbnail.png",
     technologies: ["React", "Node.js", "Real-time Data", "Esports API"],
     videoUrl: "/Videos/FanClash.mp4"
@@ -35,30 +38,34 @@ const projects: Project[] = [
     title: "Tacto Electronics Game",
     company: "Playshifu",
     description: "An educational AR game teaching basic electronics concepts through interactive puzzles and simulations.",
+    metric: "1K+ downloads in month 1 · Session length ↑40%",
     image: "/Images/TactoElectronics-Thumbnail.webp",
     technologies: ["AR", "Unity", "Educational Design", "Interactive Learning"],
-    videoUrl: "/Videos/TactoElectronics.mp4"  
+    videoUrl: "/Videos/TactoElectronics.mp4"
   },
   {
     title: "Food Truck Chef",
     company: "Nukebox Studios",
-    description: "A time-management cooking game where players manage food trucks , serving customers and upgrading equipment.",
+    description: "A time-management cooking game where players manage food trucks, serving customers and upgrading equipment.",
+    metric: "Google Play Game of Year 2017",
     image: "/Images/FoodTruckChef-Thumbnail.jpg",
     technologies: ["Unity", "F2P", "Mobile Game Design", "Monetization"],
-    videoUrl: "/Videos/FoodTruckChef.mp4"  
+    videoUrl: "/Videos/FoodTruckChef.mp4"
   },
   {
     title: "Web3 Gaming Marketplace",
     company: "AURA",
     description: "A decentralized marketplace for game NFTs, allowing players to buy, sell, and trade in-game items across multiple games.",
+    metric: "CTR ↑5% · Drops engagement ↑7%",
     image: "/Images/Aura-Thumbnail.png",
     technologies: ["Blockchain", "NFT", "React", "Smart Contracts"],
-    videoUrl: "/Videos/Aura.mp4" 
+    videoUrl: "/Videos/Aura.mp4"
   },
   {
     title: "Adaptive Math Games",
     company: "SplashLearn",
     description: "A suite of educational games that adapt to student performance, focusing on making math learning engaging and effective.",
+    metric: "Student engagement ↑23%",
     image: "/Images/SplashLearn-Thumbnail.png",
     technologies: ["Educational Design", "Unity", "Adaptive Learning", "Analytics"],
     videoUrl: "/Videos/SplashLearn.mp4"
@@ -67,6 +74,7 @@ const projects: Project[] = [
     title: "Bring Me Home",
     company: "Nukebox Studios",
     description: "A crossy road type of game where the player has to navigate through obstacles to bring the character home.",
+    metric: "A/B monetization ↑28%",
     image: "/Images/BringMeHome-Thumbnail.png",
     technologies: ["Unity", "F2P", "Mobile Game Design", "Monetization"],
     videoUrl: "/Videos/BringMeHome.mp4"
@@ -75,6 +83,7 @@ const projects: Project[] = [
     title: "One Man Army",
     company: "Nukebox Studios",
     description: "A 2D defense game where the player has to defend themselves from waves of enemies.",
+    metric: "A/B monetization ↑28%",
     image: "/Images/OneManArmy-Thumbnail.png",
     technologies: ["Unity", "F2P", "Mobile Game Design", "Monetization"],
     videoUrl: "/Videos/OneManArmy.mp4"
@@ -83,8 +92,9 @@ const projects: Project[] = [
     title: "Plugo Animals",
     company: "Playshifu",
     description: "An educational toy based game where kids learn about animals and their habitats.",
+    metric: "0→1 launch · Built & shipped from scratch",
     image: "/Images/PlugoAnimals-Thumbnail.png",
-    technologies: ["Unity", "F2P", "Educational Design", "Interactive Learning"],
+    technologies: ["Unity", "AR", "Educational Design", "Interactive Learning"],
     videoUrl: "/Videos/PlugoAnimals.mp4"
   }
 ];
@@ -187,10 +197,16 @@ const Projects = () => {
                     {project.title}
                   </h3>
                   
-                  <p className="text-white/70 text-sm mb-4">
+                  <p className="text-white/70 text-sm mb-3">
                     {project.description}
                   </p>
-                  
+
+                  {/* Impact Metric */}
+                  <div className="flex items-center gap-2 mb-4 px-2 py-1.5 rounded bg-cyan-500/10 border border-cyan-500/20">
+                    <TrendingUp size={13} className="text-cyan-400 flex-shrink-0" />
+                    <span className="text-xs font-medium text-cyan-300">{project.metric}</span>
+                  </div>
+
                   {/* Technologies */}
                   <div className="flex flex-wrap gap-2 mb-4">
                     {project.technologies.map((tech, i) => (
