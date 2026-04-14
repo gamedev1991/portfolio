@@ -1,6 +1,6 @@
 import Card from './common/Card';
 import AnimatedText from './common/AnimatedText';
-import { Globe, Gamepad, Database, Workflow, Lightbulb, Users } from 'lucide-react';
+import { Gamepad, Database, Workflow, Shield, TrendingUp, Users } from 'lucide-react';
 
 interface SkillCardProps {
   icon: React.ReactNode;
@@ -26,34 +26,34 @@ const SkillCard = ({ icon, title, description }: SkillCardProps) => (
 const About = () => {
   const skills = [
     {
-      icon: <Gamepad size={28} />,
-      title: "Game Design",
-      description: "Creating engaging gameplay mechanics and enjoyable user experiences in games across platforms."
+      icon: <Workflow size={28} />,
+      title: "Product Strategy",
+      description: "Owning roadmaps, defining priorities, and making the call on what not to ship — across F2P, live ops, and 0→1 launches."
+    },
+    {
+      icon: <Shield size={28} />,
+      title: "Risk Mitigation",
+      description: "Identifying and neutralising product risks before they reach production. Prevented a $20K revenue impact through structured impact analysis at JetSynthesys."
     },
     {
       icon: <Database size={28} />,
-      title: "Data Analytics",
-      description: "Driving product decisions through data analysis, metrics tracking, and insightful interpretations."
+      title: "Data & Analytics",
+      description: "Turning retention curves, funnel data, and event logs into product decisions. Comfortable owning metrics end-to-end."
     },
     {
-      icon: <Workflow size={28} />,
-      title: "Product Strategy",
-      description: "Developing comprehensive roadmaps and strategies to align products with business goals."
-    },
-    {
-      icon: <Globe size={28} />,
-      title: "Web3 & Mobile",
-      description: "Specialized in both traditional mobile games and emerging Web3 gaming technologies."
-    },
-    {
-      icon: <Lightbulb size={28} />,
-      title: "Innovation",
-      description: "Constantly exploring new technologies and approaches to gaming and product development."
+      icon: <TrendingUp size={28} />,
+      title: "Monetization Strategy",
+      description: "Designing and optimising F2P monetisation systems — from A/B test design to live gacha balancing across mobile titles."
     },
     {
       icon: <Users size={28} />,
       title: "Team Leadership",
-      description: "Guiding cross-functional teams to deliver high-quality products on schedule."
+      description: "Leading cross-functional squads across engineering, design, and QA — in Agile sprints and live ops war rooms."
+    },
+    {
+      icon: <Gamepad size={28} />,
+      title: "Mobile Gaming Domain",
+      description: "10+ years shipping mobile games across casual, F2P, AR, and Web3 — including a Google Play Game of Year title."
     }
   ];
 
