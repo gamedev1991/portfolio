@@ -74,6 +74,7 @@ const projects: Project[] = [
     title: "Bring Me Home",
     company: "Nukebox Studios",
     description: "A crossy road type of game where the player has to navigate through obstacles to bring the character home.",
+    metric: "0→1 launch · Built & shipped from scratch",
     image: "/Images/BringMeHome-Thumbnail.png",
     technologies: ["Unity", "F2P", "Mobile Game Design", "Monetization"],
     videoUrl: "/Videos/BringMeHome.mp4"
@@ -82,6 +83,7 @@ const projects: Project[] = [
     title: "One Man Army",
     company: "Nukebox Studios",
     description: "A 2D defense game where the player has to defend themselves from waves of enemies.",
+    metric: "0→1 launch · Built & shipped from scratch",
     image: "/Images/OneManArmy-Thumbnail.png",
     technologies: ["Unity", "F2P", "Mobile Game Design", "Monetization"],
     videoUrl: "/Videos/OneManArmy.mp4"
