@@ -83,7 +83,7 @@ const projects: Project[] = [
     title: "One Man Army",
     company: "Nukebox Studios",
     description: "A 2D defense game where the player has to defend themselves from waves of enemies.",
-    metric: "0→1 launch · Built & shipped from scratch",
+    metric: "100K+ downloads · 4.3★ · 2.81K reviews",
     image: "/Images/OneManArmy-Thumbnail.png",
     technologies: ["Unity", "F2P", "Mobile Game Design", "Monetization"],
     videoUrl: "/Videos/OneManArmy.mp4"
