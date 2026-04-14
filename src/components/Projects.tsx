@@ -8,7 +8,7 @@ interface Project {
   title: string;
   company: string;
   description: string;
-  metric: string;
+  metric?: string;
   image: string;
   technologies: string[];
   playStoreLink?: string;
@@ -74,7 +74,6 @@ const projects: Project[] = [
     title: "Bring Me Home",
     company: "Nukebox Studios",
     description: "A crossy road type of game where the player has to navigate through obstacles to bring the character home.",
-    metric: "A/B monetization ↑28%",
     image: "/Images/BringMeHome-Thumbnail.png",
     technologies: ["Unity", "F2P", "Mobile Game Design", "Monetization"],
     videoUrl: "/Videos/BringMeHome.mp4"
@@ -83,7 +82,6 @@ const projects: Project[] = [
     title: "One Man Army",
     company: "Nukebox Studios",
     description: "A 2D defense game where the player has to defend themselves from waves of enemies.",
-    metric: "A/B monetization ↑28%",
     image: "/Images/OneManArmy-Thumbnail.png",
     technologies: ["Unity", "F2P", "Mobile Game Design", "Monetization"],
     videoUrl: "/Videos/OneManArmy.mp4"
@@ -202,10 +200,12 @@ const Projects = () => {
                   </p>
 
                   {/* Impact Metric */}
-                  <div className="flex items-center gap-2 mb-4 px-2 py-1.5 rounded bg-cyan-500/10 border border-cyan-500/20">
-                    <TrendingUp size={13} className="text-cyan-400 flex-shrink-0" />
-                    <span className="text-xs font-medium text-cyan-300">{project.metric}</span>
-                  </div>
+                  {project.metric && (
+                    <div className="flex items-center gap-2 mb-4 px-2 py-1.5 rounded bg-cyan-500/10 border border-cyan-500/20">
+                      <TrendingUp size={13} className="text-cyan-400 flex-shrink-0" />
+                      <span className="text-xs font-medium text-cyan-300">{project.metric}</span>
+                    </div>
+                  )}
 
                   {/* Technologies */}
                   <div className="flex flex-wrap gap-2 mb-4">
