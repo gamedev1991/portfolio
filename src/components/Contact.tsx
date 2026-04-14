@@ -4,7 +4,7 @@ import emailjs from '@emailjs/browser';
 import Card from './common/Card';
 import Button from './common/Button';
 import AnimatedText from './common/AnimatedText';
-import { Mail, Linkedin, ExternalLink, Send } from 'lucide-react';
+import { Mail, Linkedin, ExternalLink, Send, Github } from 'lucide-react';
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -178,9 +178,21 @@ const Contact = () => {
                   <span>LinkedIn Profile</span>
                 </a>
                 
-                <a 
-                  href="https://steamcommunity.com/profiles/76561198123903147/" 
-                  target="_blank" 
+                <a
+                  href="https://github.com/gamedev1991"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="flex items-center space-x-3 text-white/80 hover:text-cyan-400 transition-colors group"
+                >
+                  <div className="w-10 h-10 rounded-full flex items-center justify-center border border-white/20 group-hover:border-cyan-500/50 transition-colors">
+                    <Github size={18} />
+                  </div>
+                  <span>GitHub Profile</span>
+                </a>
+
+                <a
+                  href="https://steamcommunity.com/profiles/76561198123903147/"
+                  target="_blank"
                   rel="noreferrer"
                   className="flex items-center space-x-3 text-white/80 hover:text-cyan-400 transition-colors group"
                 >

@@ -44,8 +44,16 @@ const Layout = ({ children }: LayoutProps) => {
               >
                 Steam Profile
               </a>
-              <a 
-                href="/vibe-coding-projects" 
+              <a
+                href="https://github.com/gamedev1991"
+                target="_blank"
+                rel="noreferrer"
+                className="text-white/60 hover:text-cyan-400 transition-colors text-sm"
+              >
+                GitHub
+              </a>
+              <a
+                href="/vibe-coding-projects"
                 className="text-white/60 hover:text-cyan-400 transition-colors text-sm"
               >
                 Vibe Coding
