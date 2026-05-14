@@ -110,8 +110,8 @@ const Hero = () => {
               <Button
                 variant="secondary"
                 size="lg"
-                href="/RahulOhri.pdf"
-                download="Rahul_Ohri_PM_Resume.pdf"
+                href="/RahulOhri - ProductManager.pdf"
+                download="RahulOhri - ProductManager.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
                 icon={<Download size={16} />}
